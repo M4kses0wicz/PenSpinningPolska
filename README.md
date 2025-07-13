@@ -55,7 +55,7 @@ src/
 
 ## Kontakt
 
-- **Strona internetowa**: [penspinning.pl](https://penspinning.pl)
+- **Strona internetowa**: [penspinning.pl](http://penspinning.pl)
 - **Discord**: [Pen Spinning Polska](https://discord.gg/MCXEnkh)
 - **E-mail**: Piotr Paruch: pari@penspinning.pl - Maksymilian Klemensowicz (Dev) contact@klemensowicz.pl
 
