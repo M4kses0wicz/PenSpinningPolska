@@ -56,12 +56,13 @@ src/
 ## Kontakt
 
 - **Strona internetowa**: [penspinning.pl](https://penspinning.pl)
-- **Discord**: Pen Spinning Polska
+- **Discord**: [Pen Spinning Polska](https://discord.gg/MCXEnkh)
 - **E-mail**: Piotr Paruch: pari@penspinning.pl - Maksymilian Klemensowicz (Dev) contact@klemensowicz.pl
 
 ## Licencja
 
-Projekt jest licencjonowany na podstawie licencji MIT. Zobacz plik [LICENSE](LICENSE) dla szczegółów.
+Nie kradnij - tak nie wypada.
+PenSpinning Polska © 2025. All Rights Reserved.
 
 ## Autor
 
