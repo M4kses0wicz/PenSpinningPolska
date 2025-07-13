@@ -64,7 +64,7 @@ src/
 Nie kradnij - tak nie wypada.
 PenSpinning Polska © 2025. All Rights Reserved.
 
-## Autor
+## Deweloper & Designer
 
 Maksymilian Klemensowicz - M4k.
 
