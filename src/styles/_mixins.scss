@@ -1,0 +1,30 @@
+@mixin FlexCenter($flex-direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flex-direction;
+}
+
+@mixin MediaMaxWidth($px) {
+  @media (max-width: $px) {
+    @content;
+  }
+}
+
+@mixin MediaMinWidth($px) {
+  @media (min-width: $px) {
+    @content;
+  }
+}
+
+@mixin MediaMaxHeight($px) {
+  @media (max-height: $px) {
+    @content;
+  }
+}
+
+@mixin MediaMinHeight($px) {
+  @media (min-height: $px) {
+    @content;
+  }
+}
