@@ -66,7 +66,7 @@ PenSpinning Polska © 2025. All Rights Reserved.
 
 ## Deweloper & Designer
 
-Maksymilian Klemensowicz - M4k.
+Maksymilian Klemensowicz - MAksesOwicz (M4k)
 
 ## Wsparcie
 
