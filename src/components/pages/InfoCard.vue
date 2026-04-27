@@ -2,6 +2,11 @@
 
 <template>
   <main>
+    <div class="graphic">
+      <div class="box g"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
     <div class="container c-1">
       <p class="bigger">Chociaż tutaj jest jeszcze cisza...</p>
       <p class="smaller">To za kulisami dzieje się więcej, niż myślisz.</p>
@@ -10,6 +15,11 @@
     <div class="container c-2">
       <p class="bigger">Jeszcze chwila cierpliwości...</p>
       <p class="smaller">Składamy coś, czego nie scrolluje się obojętnie.</p>
+    </div>
+    <div class="graphic g-2">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box g"></div>
     </div>
   </main>
   <div class="wrapper">
@@ -77,6 +87,32 @@ main {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     opacity: 10%;
+  }
+}
+
+.graphic {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 75px;
+
+  &.g-2 {
+    align-items: flex-start;
+    margin-top: 75px;
+    margin-bottom: 0px;
+    justify-content: flex-end;
+  }
+
+  .box {
+    width: 55px;
+    height: 55px;
+    background: $white;
+    margin-right: 20px;
+    &.g {
+      width: 80px;
+      height: 80px;
+      background: $green;
+    }
   }
 }
 </style>
