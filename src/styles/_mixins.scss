@@ -5,26 +5,22 @@
   flex-direction: $flex-direction;
 }
 
-@mixin MediaMaxWidth($px) {
-  @media (max-width: $px) {
-    @content;
-  }
-}
-
-@mixin MediaMinWidth($px) {
-  @media (min-width: $px) {
-    @content;
-  }
-}
-
-@mixin MediaMaxHeight($px) {
-  @media (max-height: $px) {
-    @content;
-  }
-}
-
-@mixin MediaMinHeight($px) {
-  @media (min-height: $px) {
-    @content;
+@mixin Media($operator, $px) {
+  @if $operator == "<" {
+    @media (max-width: $px) {
+      @content;
+    }
+  } @else if $operator == ">" {
+    @media (min-width: $px) {
+      @content;
+    }
+  } @else if $operator == "<h" {
+    @media (max-height: $px) {
+      @content;
+    }
+  } @else if $operator == ">h" {
+    @media (min-height: $px) {
+      @content;
+    }
   }
 }
