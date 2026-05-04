@@ -4,7 +4,7 @@ Oficjalna strona internetowa polskiej społeczności pen spinnerów.
 
 ## O projekcie
 
-Strona internetowa dla Pen Spinning Polska, stworzona w celu promocji pen spinningu w Polsce oraz integracji polskiej społeczności spinnerów. Platforma zawiera materiały edukacyjne, informacje o społeczności oraz zasoby dla początkujących i zaawansowanych praktyków.
+Strona internetowa dla Pen Spinning Polska, stworzona w celu promocji pen spinningu w Polsce oraz integracji polskiej społeczności spinnerów. Platforma zawiera materiały edukacyjne, informacje o społeczności oraz zasoby dla początkujących i zaawansowanych praktyków. Design jest inspirowany stroną designcanada.com.
 
 ## Stack technologiczny
 
