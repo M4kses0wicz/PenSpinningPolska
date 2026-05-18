@@ -59,11 +59,6 @@ src/
 - **Discord**: [Pen Spinning Polska](https://discord.gg/MCXEnkh)
 - **E-mail**: Piotr Paruch: pari@penspinning.pl - Maksymilian Klemensowicz (Dev) contact@klemensowicz.pl
 
-## Licencja
-
-Nie kradnij - tak nie wypada.
-PenSpinning Polska © 2025. All Rights Reserved.
-
 ## Deweloper & Designer
 
 Maksymilian Klemensowicz - MAksesOwicz (M4k)
