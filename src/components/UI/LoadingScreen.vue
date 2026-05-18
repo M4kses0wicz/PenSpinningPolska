@@ -23,11 +23,29 @@
   .wrapper {
     @include FlexCenter(row);
     gap: 100px;
+
+    @include Media("<", 1080px) {
+      gap: 25px;
+    }
+
+    @include Media("<", 500px) {
+      gap: 10px;
+    }
   }
 
   .box {
     height: 50px;
     width: 50px;
+
+    @include Media("<", 1080px) {
+      height: 25px;
+      width: 25px;
+    }
+    @include Media("<", 500px) {
+      height: 15px;
+      width: 15px;
+    }
+
     background-color: $white;
     animation: loadingAnim 3s ease-in-out infinite;
 
