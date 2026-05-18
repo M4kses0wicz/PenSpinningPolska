@@ -1,5 +1,6 @@
 <script setup>
 import InfoCard from "./components/pages/InfoCard.vue";
+import LoadingScreen from "./components/UI/LoadingScreen.vue";
 import Lenis from "lenis";
 
 const lenis = new Lenis({
@@ -16,8 +17,8 @@ requestAnimationFrame(raf);
 </script>
 
 <template>
-  <RouterView />
-  <!-- <InfoCard /> -->
+  <LoadingScreen />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped lang="scss"></style>
