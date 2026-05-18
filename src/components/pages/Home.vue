@@ -1,6 +1,10 @@
-<script></script>
+<script setup>
+import BackgroundLines from "../UI/BackgroundLines.vue";
+</script>
 
-<template><h1>Home page</h1></template>
+<template>
+  <BackgroundLines />
+</template>
 
 <style lang="scss" scoped>
 @use "../../styles/base.scss" as *;
