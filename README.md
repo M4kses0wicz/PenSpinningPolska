@@ -33,9 +33,8 @@ npm run dev
 
 ```
 src/
-├── components/       # Komponenty Vue
-├── views/            # Widoki aplikacji
 ├── assets/           # Zasoby statyczne
+├── components/       # Komponenty Vue
 ├── styles/           # Style
 └── main.js           # Punkt wejścia aplikacji
 ```
