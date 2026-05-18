@@ -17,8 +17,13 @@
 
 .container {
   @include FlexCenter(row);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   height: 100vh;
   width: 100vw;
+  background-color: $black;
 
   .wrapper {
     @include FlexCenter(row);
@@ -51,7 +56,7 @@
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        animation-delay: ($i - 1) * 2.5s;
+        animation-delay: ($i - 1) * -2.5s;
       }
     }
   }
@@ -63,7 +68,6 @@
     background: $white;
   }
   10% {
-    // height: 100px;
     background: $green;
     transform: translateY(50px);
   }
