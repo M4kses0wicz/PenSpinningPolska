@@ -42,6 +42,7 @@ nav {
   justify-content: space-evenly;
 
   .navitem {
+    margin-top: 25px;
     width: 20%;
 
     dt {
