@@ -3,8 +3,10 @@
 <template>
   <nav>
     <div class="navitem">
-      <dt></dt>
-      <dd></dd>
+      <p>
+        <strong>P</strong>ortal <strong>P</strong>olskich
+        <strong>P</strong>enspinnerów
+      </p>
     </div>
     <div class="navitem">
       <dt></dt>
@@ -23,6 +25,10 @@
       <dd>Dowiedz się więcej na temat pen spinningu</dd>
     </div>
   </nav>
+  <div class="socials"></div>
+  <div class="copy">
+    &copy; 2026 Portal Polskich Penspinnerów. Wszystkie prawa zastrzeżone.
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -44,6 +50,16 @@ nav {
   .navitem {
     margin-top: 25px;
     width: 20%;
+    cursor: pointer;
+
+    p {
+      font-size: $font-size-subheading;
+      max-width: 300px;
+      margin-left: 20px;
+      strong {
+        font-weight: 900;
+      }
+    }
 
     dt {
       font-size: $font-size-subheading;
