@@ -2,33 +2,48 @@
 
 <template>
   <nav>
-    <div class="navitem">
-      <p>
-        <strong>P</strong>ortal <strong>P</strong>olskich
-        <strong>P</strong>enspinnerów
-      </p>
+    <div class="wrapper">
+      <div class="navitem">
+        <p>
+          <strong>P</strong>ortal <strong>P</strong>olskich
+          <strong>P</strong>enspinnerów
+        </p>
+      </div>
+      <div class="navitem">
+        <dt></dt>
+        <dd></dd>
+      </div>
+      <div class="navitem">
+        <dt>Historia</dt>
+        <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
+      </div>
+      <div class="navitem">
+        <dt>Wydarzenia</dt>
+        <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
+      </div>
+      <div class="navitem">
+        <dt>Artykuły</dt>
+        <dd>Dowiedz się więcej na temat pen spinningu</dd>
+      </div>
     </div>
-    <div class="navitem">
-      <dt></dt>
-      <dd></dd>
-    </div>
-    <div class="navitem">
-      <dt>Historia</dt>
-      <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
-    </div>
-    <div class="navitem">
-      <dt>Wydarzenia</dt>
-      <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
-    </div>
-    <div class="navitem">
-      <dt>Artykuły</dt>
-      <dd>Dowiedz się więcej na temat pen spinningu</dd>
+
+    <div class="bottom-content-wrapper">
+      <div class="socials">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <div class="copy">
+        <p>
+          Strona stworzona przez: <br /><a
+            href="https://klemensowicz.pl"
+            target="_blank"
+            >Klemensowicz - M4k</a
+          >
+        </p>
+      </div>
     </div>
   </nav>
-  <div class="socials"></div>
-  <div class="copy">
-    &copy; 2026 Portal Polskich Penspinnerów. Wszystkie prawa zastrzeżone.
-  </div>
 </template>
 
 <style scoped lang="scss">
@@ -45,30 +60,54 @@ nav {
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100svh;
 
-  .navitem {
-    margin-top: 25px;
-    width: 20%;
-    cursor: pointer;
+  .wrapper {
+    display: flex;
+    justify-content: space-evenly;
 
-    p {
-      font-size: $font-size-subheading;
-      max-width: 300px;
-      margin-left: 20px;
-      strong {
-        font-weight: 900;
+    .navitem {
+      margin-top: 25px;
+      width: 20%;
+      cursor: pointer;
+
+      p {
+        font-size: $font-size-subheading;
+        max-width: 300px;
+        margin-left: 20px;
+        strong {
+          font-weight: 900;
+        }
+      }
+
+      dt {
+        font-size: $font-size-subheading;
+        font-weight: bold;
+      }
+      dd {
+        font-size: $font-size-body;
+        opacity: 0.75;
+        max-width: 300px;
       }
     }
+  }
 
-    dt {
-      font-size: $font-size-subheading;
-      font-weight: bold;
+  .bottom-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    .socials {
+      display: flex;
+      gap: 20px;
     }
-    dd {
-      font-size: $font-size-body;
+
+    .copy {
+      font-size: $font-size-small;
       opacity: 0.75;
-      max-width: 300px;
+      text-align: right;
     }
   }
 }
