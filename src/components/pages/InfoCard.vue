@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import router from "../../routes/index.js";
+
+import { useRouter } from "vue-router";
+</script>
 
 <template>
   <main>
@@ -11,7 +15,7 @@
       <p class="bigger">Chociaż tutaj jest jeszcze cisza...</p>
       <p class="smaller">To za kulisami dzieje się więcej, niż myślisz.</p>
     </div>
-    <div class="date">01.06.2026</div>
+    <div class="date" @click="router.push('/')">Wróć do strony głównej</div>
     <div class="container c-2">
       <p class="bigger">Jeszcze chwila cierpliwości...</p>
       <p class="smaller">Składamy coś, czego nie scrolluje się obojętnie.</p>
@@ -100,9 +104,14 @@ main {
     font-weight: 900;
     letter-spacing: 10px;
     margin: 100px 0px;
+    text-decoration: underline;
 
     @include Media("<", 750px) {
       font-size: 17px;
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }
