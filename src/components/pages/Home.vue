@@ -350,7 +350,7 @@ section {
   }
 
   &.history {
-    margin-bottom: 2000px;
+    // margin-bottom: 2000px;
     .video-content {
       width: 100%;
 
