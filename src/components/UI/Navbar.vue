@@ -33,15 +33,15 @@ onUnmounted(() => {
         <dd></dd>
       </div>
       <div class="navitem">
-        <dt>Historia</dt>
+        <dt><strong>H</strong>istoria</dt>
         <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
       </div>
       <div class="navitem">
-        <dt>Wydarzenia</dt>
+        <dt><strong>W</strong>ydarzenia</dt>
         <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
       </div>
       <div class="navitem">
-        <dt>Artykuły</dt>
+        <dt><strong>A</strong>rtykuły</dt>
         <dd>Dowiedz się więcej na temat pen spinningu</dd>
       </div>
     </div>
