@@ -6,6 +6,8 @@ import Navbar from "../UI/Navbar.vue";
 
 const router = useRouter();
 const hovered = ref(false);
+const hovered1 = ref(false);
+// const hovered2 = ref(false);
 
 function goto(url) {
   window.open(url, "_blank");
@@ -77,6 +79,57 @@ function goto(url) {
         </div>
         <div class="triple-box-container">
           <div class="box g"></div>
+          <div class="box g"></div>
+          <div class="box g"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="history">
+    <div class="video-content">
+      <div
+        class="vid"
+        @mouseenter="hovered1 = true"
+        @mouseleave="hovered1 = false"
+        @click="goto('https://youtu.be/gwMx_X5vjYc?si=gH8JKQxf8auk1zSK')"
+      >
+        <video
+          v-if="hovered1"
+          src="../../assets/meeting1.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+        <img v-else src="../../assets/meeting1.png" />
+      </div>
+      <div class="vid-text" v-if="hovered1 === true">Obejrzyj całość</div>
+      <div class="vid-text" v-if="hovered1 === false" style="opacity: 0">
+        Obejrzyj całość
+      </div>
+    </div>
+    <div class="container">
+      <div class="text-content">
+        <h4>Powstanie portalu</h4>
+        <p>
+          Portal Polskich Pen Spinnerów powstał 28 kwietnia 2006 roku z
+          inicjatywy trzech osób: dantego, Kmibara oraz Hakana którzy poznali
+          się na nieistniejącym już forum dotyczącym żonglerki 11fingers.glt.pl.
+          Na początku była to grupka zapaleńców chcących nauczyć się efektownych
+          trików długopisem. Z czasem rozrosła się do ogólnopolskiej
+          społeczności, do której co roku dołączają nowi pen spinnerzy.
+          Efektowne kręcenie długopisem mimo to nadal zostaje zajęciem niszowym
+          i wyjątkowym.
+        </p>
+      </div>
+      <div class="heading">
+        <h2>
+          Powstanie <strong>P</strong>ortalu <strong>P</strong>olskich
+          <strong>P</strong>enspinnerów
+        </h2>
+        <div class="triple-box-container">
+          <div class="box w"></div>
           <div class="box g"></div>
           <div class="box g"></div>
         </div>
@@ -184,7 +237,7 @@ main {
 
 section {
   width: 60%;
-  margin: 300px 0px 300px 20%;
+  margin: 300px 0px 400px 20%;
   color: $white;
   font-family: "Inter", sans-serif;
 
@@ -295,6 +348,121 @@ section {
       }
     }
   }
+
+  &.history {
+    margin-bottom: 2000px;
+    .video-content {
+      width: 100%;
+
+      .vid {
+        width: 100%;
+        aspect-ratio: 16/7;
+        overflow: hidden;
+        cursor: pointer;
+
+        &::before {
+          content: "Penspinning meeting with Ian Jenson - Kraków 2.08.2017";
+          opacity: 0.75;
+          display: block;
+          font-size: $font-size-small;
+          text-align: right;
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(70%);
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(100%);
+        }
+      }
+
+      .vid-text {
+        font-size: $font-size-small;
+        margin-top: 10px;
+        margin-left: 5px;
+        display: flex;
+        transform: translate(0%, -120%);
+        mix-blend-mode: color-dodge;
+        pointer-events: none;
+
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          display: block;
+          z-index: -1;
+          background: url(../../assets/arrow.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: brightness(2);
+          transition: 0.1s ease-in-out;
+          rotate: -45deg;
+          opacity: 1;
+          animation: moves 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+          margin-left: 10px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .heading {
+      width: 66%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      h2 {
+        font-size: $font-size-big;
+        font-weight: 900;
+        text-align: right;
+        transform: translateY(-105px);
+        position: relative;
+        z-index: 1;
+      }
+
+      .triple-box-container {
+        transform: translateY(-105px);
+      }
+    }
+
+    .text-content {
+      width: 33%;
+      margin-top: 50px;
+
+      animation: text-margin1 ease forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 150%;
+
+      h4 {
+        font-size: $font-size-subheading;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: $font-size-body;
+        font-weight: 300;
+        word-spacing: 2px;
+        letter-spacing: 0.5px;
+        // opacity: 0.75;
+      }
+    }
+  }
 }
 
 @keyframes text-margin {
@@ -303,6 +471,15 @@ section {
   }
   100% {
     margin-top: 350px;
+  }
+}
+
+@keyframes text-margin1 {
+  0% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-top: 200px;
   }
 }
 </style>
