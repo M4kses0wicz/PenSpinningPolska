@@ -117,6 +117,8 @@ nav {
         font-size: $font-size-subheading;
         max-width: 300px;
         margin-left: 20px;
+        cursor: pointer;
+
         strong {
           font-weight: 900;
         }
@@ -126,6 +128,7 @@ nav {
         font-size: $font-size-subheading;
         font-weight: bold;
         cursor: pointer;
+        width: max-content;
       }
 
       dd {
