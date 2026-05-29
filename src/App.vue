@@ -6,6 +6,7 @@ import { useRouter } from "vue-router";
 
 const isLoading = ref(true);
 const router = useRouter();
+let isFirstLoad = true;
 
 const lenis = new Lenis({
   duration: 1.3,
@@ -19,12 +20,22 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-const MIN_LOADING_TIME = 1000;
+const MIN_LOADING_TIME = 1250;
+const FADE_IN_DURATION = 400;
 let navStart = 0;
 
 router.beforeEach(() => {
-  isLoading.value = true;
   navStart = Date.now();
+  isLoading.value = true;
+
+  if (isFirstLoad) {
+    isFirstLoad = false;
+    return;
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, FADE_IN_DURATION);
+  });
 });
 
 router.afterEach(() => {
@@ -45,6 +56,12 @@ router.afterEach(() => {
 </template>
 
 <style lang="scss">
+.fade-enter-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+}
 .fade-leave-active {
   transition: opacity 0.6s ease;
 }
