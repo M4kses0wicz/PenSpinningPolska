@@ -102,10 +102,12 @@ nav {
   justify-content: space-between;
   height: 100svh;
   mix-blend-mode: difference;
+  pointer-events: none;
 
   .wrapper {
     display: flex;
     justify-content: space-evenly;
+    pointer-events: all;
 
     .navitem {
       margin-top: 25px;
@@ -142,6 +144,7 @@ nav {
   .bottom-content-wrapper {
     display: flex;
     justify-content: space-between;
+    pointer-events: all;
     padding: 20px;
 
     .socials {
