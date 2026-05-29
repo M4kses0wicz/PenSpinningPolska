@@ -100,6 +100,7 @@ onUnmounted(() => {
 
 nav {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -107,7 +108,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   height: 100svh;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
   pointer-events: none;
 
   .wrapper {

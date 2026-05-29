@@ -2,74 +2,9 @@ $white: #ffffff;
 $black: #070707;
 $green: #278d01;
 
+$font-size-big: 7rem;
 $font-size-heading: 2.5rem;
 $font-size-subheading: 1.75rem;
 $font-size-title: 1.25rem;
 $font-size-body: 1rem;
 $font-size-small: 0.775rem;
-
-dt:hover:has(.l) {
-  .l::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: url(../assets/arrow.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 35px;
-    height: 35px;
-    opacity: 1;
-    // border: 1px dashed red;
-  }
-}
-
-strong {
-  color: $green;
-  transition: 0.3s ease-in-out;
-
-  &.l::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    background: url(../assets/arrow.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: brightness(2);
-    width: 0px;
-    height: 0px;
-    transition: 0.1s ease-in-out;
-    rotate: -45deg;
-    opacity: 0;
-    animation: moves 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  }
-}
-
-@keyframes moves {
-  0% {
-    transform: translate(0%, -50%);
-  }
-  15% {
-    transform: translate(8%, -55%);
-  }
-  30% {
-    transform: translate(12%, -45%);
-  }
-  45% {
-    transform: translate(5%, -58%);
-  }
-  60% {
-    transform: translate(-8%, -48%);
-  }
-  75% {
-    transform: translate(-5%, -55%);
-  }
-  90% {
-    transform: translate(6%, -52%);
-  }
-  100% {
-    transform: translate(0%, -50%);
-  }
-}
