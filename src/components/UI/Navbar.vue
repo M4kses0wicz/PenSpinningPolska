@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const scrollingDown = ref(false);
 let lastScrollY = 0;
 
@@ -23,7 +25,7 @@ onUnmounted(() => {
   <nav :class="{ 'scrolled-down': scrollingDown }">
     <div class="wrapper">
       <div class="navitem">
-        <p>
+        <p @click="router.push('/')">
           <strong>P</strong>ortal <strong>P</strong>olskich
           <strong>P</strong>enspinnerów
         </p>
@@ -33,15 +35,21 @@ onUnmounted(() => {
         <dd></dd>
       </div>
       <div class="navitem">
-        <dt><strong class="l">H</strong>istoria</dt>
+        <dt @click="router.push('/Historia')">
+          <strong class="l">H</strong>istoria
+        </dt>
         <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
       </div>
       <div class="navitem">
-        <dt><strong class="l">W</strong>ydarzenia</dt>
+        <dt @click="router.push('/Wydarzenia')">
+          <strong class="l">W</strong>ydarzenia
+        </dt>
         <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
       </div>
       <div class="navitem">
-        <dt><strong class="l">A</strong>rtykuły</dt>
+        <dt @click="router.push('/Artykuly')">
+          <strong class="l">A</strong>rtykuły
+        </dt>
         <dd>Dowiedz się więcej na temat pen spinningu</dd>
       </div>
     </div>
@@ -55,7 +63,6 @@ onUnmounted(() => {
         >
           <i class="fa-brands fa-facebook"></i>
         </a>
-
         <a
           href="https://discord.gg/MCXEnkh"
           target="_blank"
@@ -63,7 +70,6 @@ onUnmounted(() => {
         >
           <i class="fa-brands fa-discord"></i>
         </a>
-
         <a
           href="https://www.youtube.com/channel/UCX5b5jV6V5Q5Q5Q5Q5Q5Q5Q"
           target="_blank"
@@ -185,7 +191,6 @@ nav {
 nav.scrolled-down {
   .wrapper .navitem dd {
     opacity: 0;
-    // transform: translateY(-8px);
   }
 }
 </style>

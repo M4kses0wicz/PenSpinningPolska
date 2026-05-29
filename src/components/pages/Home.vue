@@ -1,6 +1,9 @@
 <script setup>
+import router from "../../routes/index.js";
 import BackgroundLines from "../UI/BackgroundLines.vue";
 import Navbar from "../UI/Navbar.vue";
+
+import { useRouter } from "vue-router";
 </script>
 
 <template>
@@ -12,7 +15,7 @@ import Navbar from "../UI/Navbar.vue";
       <div class="logo"></div>
     </div>
     <div class="wrapper">
-      <div class="container">
+      <div class="container" @click="router.push('/JakZaczac')">
         <p>Rozpocznij naukę penspinningu</p>
         <h2><strong>Jak</strong> zacząć?</h2>
         <div class="arrow">
