@@ -165,10 +165,13 @@ nav {
 
       i {
         transition: 0.25s ease;
+        // filter: drop-shadow(0 0 0px $black);
       }
 
       i:hover {
         color: $green;
+        // filter: drop-shadow(0 0 5px $black);
+        scale: 1.1;
       }
     }
 

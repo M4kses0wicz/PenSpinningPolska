@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import BackgroundLines from "../UI/BackgroundLines.vue";
 import Navbar from "../UI/Navbar.vue";
+import Footer from "../UI/Footer.vue";
 
 const router = useRouter();
 const hovered = ref(false);
@@ -183,6 +184,7 @@ function goto(url) {
       <div class="box w"></div>
     </div>
   </section>
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
