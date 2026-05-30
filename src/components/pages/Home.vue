@@ -7,7 +7,7 @@ import Navbar from "../UI/Navbar.vue";
 const router = useRouter();
 const hovered = ref(false);
 const hovered1 = ref(false);
-// const hovered2 = ref(false);
+const hovered2 = ref(false);
 
 function goto(url) {
   window.open(url, "_blank");
@@ -134,6 +134,53 @@ function goto(url) {
           <div class="box g"></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="how-to-start">
+    <h2><strong>P</strong>odstawowe tricki</h2>
+    <div class="content-container">
+      <div class="video-content">
+        <div
+          class="vid"
+          @mouseenter="hovered2 = true"
+          @mouseleave="hovered2 = false"
+          @click="goto('https://youtu.be/Mf7GMTU4M0M?si=Gu4_Nq8kmg2YH07n')"
+        >
+          <video
+            v-if="hovered2"
+            src="../../assets/meeting2.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+          <img v-else src="../../assets/meeting2.png" />
+        </div>
+        <div class="vid-text" v-if="hovered2 === true">Obejrzyj całość</div>
+        <div class="vid-text" v-if="hovered2 === false" style="opacity: 0">
+          Obejrzyj całość
+        </div>
+      </div>
+      <div class="text-content">
+        <h4>Od początku</h4>
+        <p>
+          Pen spinning można porównać do nauki gry na instrumencie. Pojedyncze
+          triki są jak dźwięki. Dopiero połączone tworzą płynną sekwencję ruchu.
+          Aby wykonać combo, czyli kombinację kilku trików, trzeba opanować jego
+          elementy składowe. Najczęściej naukę zaczyna się od czterech
+          podstawowych trików, zwanych fundamentalami: Thumb Around, Sonic,
+          Charge i Fingerpass. Nie są one jednak obowiązkowe. Tak jak w muzyce
+          nikt nie narzuca, jaką melodię masz grać, tak w pen spinningu uczysz
+          się tych trików, które najbardziej Ci odpowiadają i pasują do Twojego
+          stylu.
+        </p>
+      </div>
+    </div>
+    <div class="triple-box-container">
+      <div class="box g"></div>
+      <div class="box w"></div>
+      <div class="box w"></div>
     </div>
   </section>
 </template>
@@ -365,7 +412,7 @@ section {
           opacity: 0.75;
           display: block;
           font-size: $font-size-small;
-          text-align: right;
+          text-align: left;
           width: 100%;
         }
 
@@ -463,6 +510,112 @@ section {
       }
     }
   }
+
+  &.how-to-start {
+    .triple-box-container {
+      margin-top: 25px;
+    }
+
+    h2 {
+      font-size: $font-size-big;
+      font-weight: 900;
+      width: 100%;
+      text-align: right;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-content {
+      width: 66.666%;
+    }
+
+    .text-content {
+      width: 33%;
+      margin-top: 0px;
+      text-align: right;
+
+      animation: text-margin2 ease forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 150%;
+
+      h4 {
+        font-size: $font-size-subheading;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: $font-size-body;
+        font-weight: 300;
+        word-spacing: 2px;
+        letter-spacing: 0.5px;
+        // opacity: 0.75;
+      }
+    }
+
+    .vid {
+      width: 100%;
+      aspect-ratio: 8/5;
+      // overflow: hidden;
+      cursor: pointer;
+
+      &::after {
+        content: "Penspinning meeting - Warszawa 28.02.2016";
+        opacity: 0.75;
+        display: block;
+        font-size: $font-size-small;
+        text-align: right;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(70%);
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(100%);
+      }
+    }
+
+    .vid-text {
+      font-size: $font-size-small;
+      // margin-top: 10px;
+      margin-left: 5px;
+      display: flex;
+      transform: translate(0%, -150%);
+      mix-blend-mode: color-dodge;
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: block;
+        z-index: -1;
+        background: url(../../assets/arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(2);
+        transition: 0.1s ease-in-out;
+        rotate: -45deg;
+        opacity: 1;
+        animation: moves 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        margin-left: 10px;
+        margin-top: 5px;
+      }
+    }
+
+    .content-container {
+      display: flex;
+    }
+  }
 }
 
 @keyframes text-margin {
@@ -480,6 +633,15 @@ section {
   }
   100% {
     margin-top: 200px;
+  }
+}
+
+@keyframes text-margin2 {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 150px;
   }
 }
 </style>
