@@ -22,12 +22,12 @@ footer {
       height: 17.5px;
 
       &.one {
-        width: 80%;
+        width: 60%;
         background: $green;
       }
 
       &.two {
-        width: 20%;
+        width: 40%;
         background: $white;
       }
     }
