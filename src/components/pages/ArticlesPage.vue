@@ -8,7 +8,9 @@ import { useRouter } from "vue-router";
 <template>
   <Navbar />
   <BackgroundLines />
-  <h1>Artykuły</h1>
+  <section class="content">
+    <h1><strong>A</strong>rtykuły</h1>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -16,5 +18,16 @@ import { useRouter } from "vue-router";
 
 * {
   color: $white;
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  margin-left: 20%;
+  margin-top: 25vh;
+  width: 60%;
+
+  h1 {
+    font-size: $font-size-big;
+  }
 }
 </style>
