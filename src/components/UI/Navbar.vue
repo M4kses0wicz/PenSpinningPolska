@@ -2,6 +2,9 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 
+import { useCursor } from "../../composables/useCursor.js";
+const { grow, growS, reset } = useCursor();
+
 const router = useRouter();
 const scrollingDown = ref(false);
 let lastScrollY = 0;
@@ -25,7 +28,7 @@ onUnmounted(() => {
   <nav :class="{ 'scrolled-down': scrollingDown }">
     <div class="wrapper">
       <div class="navitem">
-        <p @click="router.push('/')">
+        <p @click="router.push('/')" @mouseover="grow" @mouseleave="reset">
           <strong>P</strong>ortal <strong>P</strong>olskich
           <strong>P</strong>enspinnerów
         </p>
@@ -35,19 +38,31 @@ onUnmounted(() => {
         <dd></dd>
       </div>
       <div class="navitem">
-        <dt @click="router.push('/Historia')">
+        <dt
+          @click="router.push('/Historia')"
+          @mouseover="grow"
+          @mouseleave="reset"
+        >
           <strong class="l">H</strong>istoria
         </dt>
         <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
       </div>
       <div class="navitem">
-        <dt @click="router.push('/Wydarzenia')">
+        <dt
+          @click="router.push('/Wydarzenia')"
+          @mouseover="grow"
+          @mouseleave="reset"
+        >
           <strong class="l">W</strong>ydarzenia
         </dt>
         <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
       </div>
       <div class="navitem">
-        <dt @click="router.push('/Artykuly')">
+        <dt
+          @click="router.push('/Artykuly')"
+          @mouseover="grow"
+          @mouseleave="reset"
+        >
           <strong class="l">A</strong>rtykuły
         </dt>
         <dd>Dowiedz się więcej na temat pen spinningu</dd>
@@ -61,27 +76,44 @@ onUnmounted(() => {
           target="_blank"
           title="Nasza grupa na Facebooku"
         >
-          <i class="fa-brands fa-facebook"></i>
+          <i
+            class="fa-brands fa-facebook"
+            @mouseover="grow"
+            @mouseleave="reset"
+          ></i>
         </a>
         <a
           href="https://discord.gg/MCXEnkh"
           target="_blank"
           title="Dołącz do naszego Discorda"
         >
-          <i class="fa-brands fa-discord"></i>
+          <i
+            class="fa-brands fa-discord"
+            @mouseover="grow"
+            @mouseleave="reset"
+          ></i>
         </a>
         <a
           href="https://www.youtube.com/channel/UCX5b5jV6V5Q5Q5Q5Q5Q5Q5Q"
           target="_blank"
           title="Zobacz nasz kanał na YouTube"
         >
-          <i class="fa-brands fa-youtube"></i>
+          <i
+            class="fa-brands fa-youtube"
+            @mouseover="grow"
+            @mouseleave="reset"
+          ></i>
         </a>
       </div>
       <div class="copy">
         <p>
           Strona stworzona przez: <br />
-          <a href="https://klemensowicz.pl" target="_blank" title="Developer"
+          <a
+            href="https://klemensowicz.pl"
+            target="_blank"
+            title="Developer"
+            @mouseover="growS"
+            @mouseleave="reset"
             >Klemensowicz - M4k</a
           >
         </p>

@@ -1,5 +1,6 @@
 <script setup>
 import LoadingScreen from "./components/UI/LoadingScreen.vue";
+import Cursor from "./components/UI/Cursor.vue";
 import Lenis from "lenis";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -49,6 +50,7 @@ router.afterEach(() => {
 </script>
 
 <template>
+  <Cursor />
   <Transition name="fade">
     <LoadingScreen v-if="isLoading" />
   </Transition>

@@ -5,6 +5,9 @@ import BackgroundLines from "../UI/BackgroundLines.vue";
 import Navbar from "../UI/Navbar.vue";
 import Footer from "../UI/Footer.vue";
 
+import { useCursor } from "../../composables/useCursor.js";
+const { grow, growS, reset, video } = useCursor();
+
 const router = useRouter();
 const hovered = ref(false);
 const hovered1 = ref(false);
@@ -24,7 +27,12 @@ function goto(url) {
       <div class="logo"></div>
     </div>
     <div class="wrapper">
-      <div class="container" @click="router.push('/JakZaczac')">
+      <div
+        class="container"
+        @click="router.push('/JakZaczac')"
+        @mouseover="grow"
+        @mouseleave="reset"
+      >
         <p>Rozpocznij naukę penspinningu</p>
         <h2><strong>Jak</strong> zacząć?</h2>
         <div class="arrow">
@@ -63,6 +71,8 @@ function goto(url) {
           @mouseenter="hovered = true"
           @mouseleave="hovered = false"
           @click="goto('https://youtu.be/o8KDwr80joE?si=XlRpOeRIz6KC2S0u')"
+          @mouseover="video"
+          @mouseout="reset"
         >
           <video
             v-if="hovered"
@@ -94,6 +104,8 @@ function goto(url) {
         @mouseenter="hovered1 = true"
         @mouseleave="hovered1 = false"
         @click="goto('https://youtu.be/gwMx_X5vjYc?si=gH8JKQxf8auk1zSK')"
+        @mouseover="video"
+        @mouseout="reset"
       >
         <video
           v-if="hovered1"
@@ -139,7 +151,7 @@ function goto(url) {
   </section>
 
   <section class="how-to-start">
-    <h2><strong>P</strong>odstawowe tricki</h2>
+    <h2><strong>S</strong>ztuka kombinacji</h2>
     <div class="content-container">
       <div class="video-content">
         <div
@@ -147,6 +159,8 @@ function goto(url) {
           @mouseenter="hovered2 = true"
           @mouseleave="hovered2 = false"
           @click="goto('https://youtu.be/Mf7GMTU4M0M?si=Gu4_Nq8kmg2YH07n')"
+          @mouseover="video"
+          @mouseout="reset"
         >
           <video
             v-if="hovered2"
