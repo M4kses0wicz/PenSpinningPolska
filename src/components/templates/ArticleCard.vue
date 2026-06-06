@@ -2,6 +2,8 @@
 const props = defineProps({
   title: String,
   description: String,
+  author: String,
+  date: String,
 });
 </script>
 
