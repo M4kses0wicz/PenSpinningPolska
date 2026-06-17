@@ -25,6 +25,9 @@ function goto(url) {
     <div class="block"></div>
     <div class="logo-container">
       <div class="logo"></div>
+      <div class="wrapper-s">
+        <div class="logo-s"></div>
+      </div>
     </div>
     <div class="wrapper">
       <div
@@ -221,12 +224,37 @@ main {
 
     .logo {
       aspect-ratio: 1/1;
-      margin-top: 10%;
-      height: 70%;
+      margin-top: 5%;
+      height: 80%;
       background-image: url("../../assets/ppp-raczka-white.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      // border: red 1px dashed;
+      position: absolute;
+      opacity: 0.75;
+      z-index: -1;
+      filter: drop-shadow(0px 0px 10px #ffffff50);
+    }
+
+    .wrapper-s {
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      @include FlexCenter(column);
+      overflow: hidden;
+      background: $black;
+    }
+
+    .logo-s {
+      aspect-ratio: 1/1;
+      height: 65%;
+      margin-top: 30%;
+      background-image: url("../../assets/ppp-raczka-white.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
       // border: red 1px dashed;
     }
   }
