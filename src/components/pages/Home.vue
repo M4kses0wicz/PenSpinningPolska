@@ -387,6 +387,11 @@ main {
 section {
   width: 60%;
   margin: 300px 0px 400px 20%;
+
+  @include Media("<", 1750px) {
+    margin: 150px 0px 200px 20%;
+  }
+
   color: $white;
   font-family: "Inter", sans-serif;
 
