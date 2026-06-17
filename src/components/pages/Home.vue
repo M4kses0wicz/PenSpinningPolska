@@ -221,11 +221,13 @@ main {
 
     .logo {
       aspect-ratio: 1/1;
+      margin-top: 10%;
       height: 70%;
       background-image: url("../../assets/ppp-raczka-white.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      // border: red 1px dashed;
     }
   }
 
