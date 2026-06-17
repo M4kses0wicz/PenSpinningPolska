@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 import BackgroundLines from "../UI/BackgroundLines.vue";
 import Navbar from "../UI/Navbar.vue";
@@ -16,12 +16,52 @@ const hovered2 = ref(false);
 function goto(url) {
   window.open(url, "_blank");
 }
+
+const mainRef = ref(null);
+
+const MAX_OFFSET_PX = 14;
+
+let rafId = null;
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+
+function handleMouseMove(e) {
+  const nx = (e.clientX / window.innerWidth) * 2 - 1;
+  const ny = (e.clientY / window.innerHeight) * 2 - 1;
+
+  targetX = Math.max(-1, Math.min(1, nx)) * MAX_OFFSET_PX;
+  targetY = Math.max(-1, Math.min(1, ny)) * MAX_OFFSET_PX;
+}
+
+function animate() {
+  currentX += (targetX - currentX) * 0.08;
+  currentY += (targetY - currentY) * 0.08;
+
+  if (mainRef.value) {
+    mainRef.value.style.setProperty("--mx", `${currentX.toFixed(2)}px`);
+    mainRef.value.style.setProperty("--my", `${currentY.toFixed(2)}px`);
+  }
+
+  rafId = requestAnimationFrame(animate);
+}
+
+onMounted(() => {
+  window.addEventListener("mousemove", handleMouseMove, { passive: true });
+  rafId = requestAnimationFrame(animate);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("mousemove", handleMouseMove);
+  if (rafId) cancelAnimationFrame(rafId);
+});
 </script>
 
 <template>
   <Navbar />
   <BackgroundLines />
-  <main>
+  <main ref="mainRef">
     <div class="block"></div>
     <div class="logo-container">
       <div class="logo"></div>
@@ -234,7 +274,15 @@ main {
       position: absolute;
       opacity: 0.75;
       z-index: -1;
-      filter: drop-shadow(0px 0px 10px #ffffff50);
+      // filter: drop-shadow(0px 0px 10px #ffffff50);
+
+      --logo-strength: 1.4;
+      transform: translate(
+        calc(var(--mx, 0px) * var(--logo-strength)),
+        calc(var(--my, 0px) * var(--logo-strength))
+      );
+      transition: transform 0.5s ease-out;
+      will-change: transform;
     }
 
     .wrapper-s {
@@ -256,6 +304,14 @@ main {
       background-position: center;
       position: absolute;
       // border: red 1px dashed;
+
+      --logo-s-strength: 0.6;
+      transform: translate(
+        calc(var(--mx, 0px) * var(--logo-s-strength)),
+        calc(var(--my, 0px) * var(--logo-s-strength))
+      );
+      transition: transform 0.6s ease-out;
+      will-change: transform;
     }
   }
 
