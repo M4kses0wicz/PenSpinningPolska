@@ -130,6 +130,37 @@ onUnmounted(() => {
   font-family: "Inter", sans-serif;
 }
 
+dt {
+  @include Media("<", 1650px) {
+    font-size: $font-size-subheading-m !important;
+  }
+}
+
+dd {
+  @include Media("<", 1650px) {
+    font-size: $font-size-body-m !important;
+    width: 75% !important;
+  }
+}
+
+.navitem p {
+  @include Media("<", 1650px) {
+    font-size: $font-size-subheading-m !important;
+  }
+}
+
+.socials {
+  i {
+    @include Media("<", 1650px) {
+      font-size: $font-size-title-m !important;
+    }
+  }
+
+  @include Media("<", 1650px) {
+    gap: 30px !important;
+  }
+}
+
 nav {
   position: fixed;
   z-index: 100;

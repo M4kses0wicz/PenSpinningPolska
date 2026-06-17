@@ -48,7 +48,7 @@ function goto(url) {
 
   <section class="info">
     <div class="heading">
-      <h2><strong>Czym</strong> jest penspinning <strong>?</strong></h2>
+      <h2><strong>Czym</strong> jest penspinning<strong>?</strong></h2>
     </div>
     <div class="content-container">
       <div class="text-content">
@@ -227,8 +227,7 @@ main {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      // border: red 1px dashed; test
-      // testestestesetsetsetsetsetstetetsetseetsetesetseet
+      // border: red 1px dashed;
     }
   }
 
@@ -273,7 +272,7 @@ main {
         height: 5px;
         background: $white;
         border-radius: 5px;
-        transition: 0.4s ease-in-out;
+        transition: 0.4s cubic-bezier(0.45, -0.29, 0.46, 1.27);
       }
 
       .arr {
@@ -307,6 +306,31 @@ section {
   color: $white;
   font-family: "Inter", sans-serif;
 
+  h2 {
+    @include Media("<", 2080px) {
+      font-size: $font-size-big-m !important;
+    }
+    @include Media("<", 1750px) {
+      font-size: $font-size-big-s !important;
+      font-weight: 700 !important;
+    }
+  }
+
+  p {
+    @include Media("<", 2080px) {
+      font-size: $font-size-body-m !important;
+    }
+  }
+
+  .vid {
+    @include Media("<", 2080px) {
+      &::before,
+      &::after {
+        font-size: $font-size-small-m !important;
+      }
+    }
+  }
+
   &.info {
     .heading {
       h2 {
@@ -332,6 +356,11 @@ section {
         animation: text-margin ease forwards;
         animation-timeline: view();
         animation-range: entry 10% cover 150%;
+
+        @include Media("<", 1750px) {
+          animation-name: text-margin-m !important;
+          margin-top: 100px;
+        }
 
         h4 {
           font-size: $font-size-subheading;
@@ -514,6 +543,11 @@ section {
       animation-timeline: view();
       animation-range: entry 10% cover 150%;
 
+      @include Media("<", 1750px) {
+        animation-name: text-margin1-s !important;
+        margin-top: 25px;
+      }
+
       h4 {
         font-size: $font-size-subheading;
         font-weight: 900;
@@ -646,12 +680,30 @@ section {
   }
 }
 
+@keyframes text-margin-m {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 200px;
+  }
+}
+
 @keyframes text-margin1 {
   0% {
     margin-top: 50px;
   }
   100% {
     margin-top: 200px;
+  }
+}
+
+@keyframes text-margin1-s {
+  0% {
+    margin-top: 25px;
+  }
+  100% {
+    margin-top: 150px;
   }
 }
 
