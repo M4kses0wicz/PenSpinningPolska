@@ -1,26 +1,24 @@
 <script setup>
 const props = defineProps({
   title: String,
-  description: String,
-  author: String,
+  date: String,
   topic: String,
   context: String,
 });
 </script>
 
 <template>
-  <div class="article-card">
+  <div class="event-card">
     <div class="top-text">
       <p>{{ context }}</p>
-      <p>{{ topic }}</p>
+      <p>{{ date }}</p>
     </div>
     <div class="middle-text">
       <h2>{{ title }}</h2>
-      <p>{{ description }}</p>
     </div>
     <div class="bottom-text">
-      <p>Czytaj &#8599;</p>
-      <p>Autor: {{ author }}</p>
+      <p>Zobacz więcej &#8599;</p>
+      <p>{{ topic }}</p>
     </div>
   </div>
 </template>
@@ -28,7 +26,7 @@ const props = defineProps({
 <style scoped lang="scss">
 @use "../../styles/base.scss" as *;
 
-.article-card {
+.event-card {
   width: 100%;
   margin: 150px 0px 0px 0px;
   cursor: pointer;
