@@ -5,13 +5,15 @@ import HowToStart from "../components/pages/articles/HowToStart.vue";
 import PPPHistory from "../components/pages/History.vue";
 import Events from "../components/pages/Events.vue";
 import ArticlesPage from "../components/pages/ArticlesPage.vue";
+import NotFound from "../components/pages/NotFound.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/JakZaczac", component: HowToStart },
+  { path: "/Artykuly/JakZaczac", component: HowToStart },
   { path: "/Historia", component: PPPHistory },
   { path: "/Wydarzenia", component: Events },
   { path: "/Artykuly", component: ArticlesPage },
+  { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 
 const router = createRouter({
