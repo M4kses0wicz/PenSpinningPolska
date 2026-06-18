@@ -633,8 +633,8 @@ section {
       animation-range: entry 10% cover 150%;
 
       @include Media("<", 1750px) {
-        animation-name: text-margin1-s !important;
-        margin-top: 25px;
+        animation-name: text-margin1-m !important;
+        margin-top: 10px;
       }
 
       h4 {
@@ -787,12 +787,12 @@ section {
   }
 }
 
-@keyframes text-margin1-s {
+@keyframes text-margin1-m {
   0% {
-    margin-top: 25px;
+    margin-top: 10px;
   }
   100% {
-    margin-top: 150px;
+    margin-top: 100px;
   }
 }
 
