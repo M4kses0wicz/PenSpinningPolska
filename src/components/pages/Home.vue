@@ -336,7 +336,11 @@ main {
 
       h2 {
         font-size: $font-size-heading;
-        font-weight: 900;
+        font-weight: 900; // asd
+
+        @include Media("<", 1750px) {
+          font-size: $font-size-heading-m !important;
+        }
       }
 
       p {
