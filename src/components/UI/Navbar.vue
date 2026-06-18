@@ -217,7 +217,7 @@ nav {
   .bottom-content-wrapper {
     display: flex;
     justify-content: space-between;
-    pointer-events: all;
+    pointer-events: none;
     padding: 20px;
 
     .socials {
@@ -225,6 +225,7 @@ nav {
       flex-direction: column;
       gap: 50px;
       font-size: $font-size-title;
+      pointer-events: all;
 
       i {
         transition: 0.25s ease;
@@ -243,6 +244,7 @@ nav {
       opacity: 0.5;
       text-align: right;
       align-self: flex-end;
+      pointer-events: all;
 
       a {
         font-size: calc($font-size-small * 0.9);
