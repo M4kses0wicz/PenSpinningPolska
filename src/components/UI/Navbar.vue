@@ -29,8 +29,8 @@ onUnmounted(() => {
     <div class="wrapper">
       <div class="navitem">
         <p @click="router.push('/')" @mouseover="grow" @mouseleave="reset">
-          <strong>P</strong>ortal <strong>P</strong>olskich
-          <strong>P</strong>enspinnerów
+          <strong class="s">P</strong>ortal <strong class="s">P</strong>olskich
+          <strong class="s">P</strong>enspinnerów
         </p>
       </div>
       <div class="navitem">

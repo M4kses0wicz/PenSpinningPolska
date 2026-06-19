@@ -33,6 +33,10 @@ dt:hover:has(.l) {
   }
 }
 
+p strong:not(.s) {
+  font-weight: 700 !important;
+}
+
 strong {
   color: #278d01;
   transition: 0.3s ease-in-out;
