@@ -36,6 +36,7 @@ dt:hover:has(.l) {
 strong {
   color: #278d01;
   transition: 0.3s ease-in-out;
+  font-weight: 700 !important;
 
   &.l::before {
     content: "";
@@ -54,6 +55,21 @@ strong {
     opacity: 0;
     animation: moves 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   }
+}
+
+ol,
+ul {
+  margin: 25px 10%;
+  font-weight: 700;
+
+  li {
+    margin: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+a {
+  color: #fff;
 }
 
 @keyframes moves {

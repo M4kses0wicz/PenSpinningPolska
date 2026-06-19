@@ -15,5 +15,6 @@ p {
   font-family: "inter", sans-serif;
   color: $white;
   font-size: $font-size-body;
+  font-weight: 300;
 }
 </style>

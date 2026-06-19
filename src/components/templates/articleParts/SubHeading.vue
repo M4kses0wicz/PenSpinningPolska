@@ -5,15 +5,15 @@ const props = defineProps({
     type: String,
     default: "h2",
   },
-  align: {
+  margin: {
     type: String,
-    default: "left",
+    default: "margin",
   },
 });
 </script>
 
 <template>
-  <component :is="tag" :class="align">{{ text }}</component>
+  <component :is="tag" :class="margin">{{ text }}</component>
 </template>
 
 <style lang="scss" scoped>
@@ -25,19 +25,13 @@ h3 {
   font-family: "inter", sans-serif;
   color: $white;
 
-  &.left {
+  &.margin {
     margin-left: 20%;
-    text-align: left;
-  }
-
-  &.right {
-    margin-right: 20%;
-    text-align: right;
   }
 }
 
 h2 {
-  font-size: $font-size-subheading;
+  font-size: $font-size-heading-m;
   margin: 50px 0px 25px 0px;
 }
 

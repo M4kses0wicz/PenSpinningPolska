@@ -1,0 +1,103 @@
+<script setup>
+defineProps({
+  align: {
+    type: String,
+    default: "left",
+  },
+  src: {
+    type: String,
+    default: null,
+  },
+  alt: {
+    type: String,
+    default: "",
+  },
+});
+</script>
+
+<template>
+  <div class="block" :class="align">
+    <img v-if="src" :src="src" :alt="alt" class="image" />
+    <div class="text">
+      <slot />
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use "../../../styles/base.scss" as *;
+
+.block {
+  width: 60%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  //   column-gap: 20px;
+  align-items: start;
+}
+
+.text {
+  font-family: "inter", sans-serif;
+  color: $white;
+  font-size: $font-size-body;
+  font-weight: 300;
+
+  p {
+    margin: 0 0 10px 0;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 10px 0;
+    padding-left: 1.2em;
+  }
+}
+
+.image {
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 1px;
+  margin: 15%;
+  margin-top: 25%;
+  margin-bottom: 0px;
+  filter: contrast(150%) brightness(95%);
+
+  animation: img-margin ease forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 150%;
+}
+
+.block.left {
+  grid-template-areas: "text text image";
+
+  .text {
+    grid-area: text;
+    text-align: left;
+  }
+  .image {
+    grid-area: image;
+  }
+}
+
+.block.right {
+  grid-template-areas: "image text text";
+
+  .text {
+    grid-area: text;
+    // text-align: right;
+  }
+  .image {
+    grid-area: image;
+  }
+}
+
+@keyframes img-margin {
+  0% {
+    margin-top: 25%;
+  }
+  100% {
+    margin-top: 75%;
+  }
+}
+</style>
