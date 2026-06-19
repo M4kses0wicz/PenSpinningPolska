@@ -1,7 +1,7 @@
 <script setup>
 import BackgroundLines from "../../UI/BackgroundLines.vue";
 import Navbar from "../../UI/Navbar.vue";
-import Heading from "../../templates/ArticleHeading.vue";
+import Heading from "../../templates/articleParts/ArticleHeading.vue";
 
 import { useRouter } from "vue-router";
 </script>

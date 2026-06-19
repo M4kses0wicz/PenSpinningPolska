@@ -1,13 +1,18 @@
 <script setup>
 import BackgroundLines from "../../UI/BackgroundLines.vue";
 import Navbar from "../../UI/Navbar.vue";
-import Heading from "../../templates/ArticleHeading.vue";
+import Footer from "../../UI/Footer.vue";
+
+import Heading from "../../templates/articleParts/ArticleHeading.vue";
 import WideTextBlock from "../../templates/articleParts/WideTextBlock.vue";
 import SubHeading from "../../templates/articleParts/SubHeading.vue";
 import TextBlock from "../../templates/articleParts/TextBlock.vue";
+import ArticleFooter from "../../templates/articleParts/ArticleFooter.vue";
+
 import logoPPP from "../../../assets/ppp-raczka-white.png";
 import penSpinners from "../../../assets/spinners.png";
 import penMods from "../../../assets/penmody.png";
+import neoIvan from "../../../assets/Neoivanmod.jpg";
 
 import { useCursor } from "../../../composables/useCursor.js";
 const { grow, growS, reset, video } = useCursor();
@@ -120,6 +125,58 @@ import { useRouter } from "vue-router";
       waga i długość nie będzie grała tak ważnej roli.
     </p>
   </TextBlock>
+  <TextBlock :src="neoIvan" alt="zdjęcie pen spinnerów" fit="c" align="right">
+    <SubHeading text="Jakie konkretnie mody wybrac?" tag="h2" margin="" />
+    <p>
+      Na tej stonie znajdziesz tutoriale do kilku polskich pen modow. Niestety
+      jedyny polski sklep z dlugopisami do pen spinningu (Pensfactory) niestety
+      juz nie funkcjonuje, wiec jestesmy zmuszeni kupic je na zagranicznym
+      sklepie. Polecanym europejskim sklepem jest miedzy innymi Spinworlds.de.
+      Oto peny którymi powinino się zainteresować:
+    </p>
+    <ul>
+      <li>
+        <dt>Neo Ivan – (22cm , 20g , okolo 25zl)</dt>
+        <dd>
+          Mod zaprojektowany przez Polaków – stworzony specjalnie dla
+          początkujących: jak najtańszy, jak najlepszy i z części dostępnych w
+          zwykłym papierniczym. Polak potrafi.
+        </dd>
+      </li>
+      <li>
+        <dt>I.suk emboss v3 – (25cm , 24g , okolo 80zl)</dt>
+        <dd>
+          Jest to absolutny klasyk jesli chodzi o powerowe mody. Nie ma
+          powerowca ktory nie posiada tego moda.
+        </dd>
+      </li>
+      <li>
+        <dt>Buster Cyl – (21,5cm , 21g , okolo 70zl )</dt>
+        <dd>
+          Ten mod jest najprawdopodobniej starszy od Ciebie – a i tak dalej jest
+          czesto wybierany – to wystarczajaco mowi o tym jak dobrym jest
+          wyborem.
+        </dd>
+      </li>
+      <li>
+        <dt>Ivan emboss – (23cm , 21g , okolo 70zl)</dt>
+        <dd>
+          Bardzo dobry mod ktory dobrze sprawdza sie w kazdym stylu krecenia.
+          Potomek Buster Cyl-a.
+        </dd>
+      </li>
+    </ul>
+  </TextBlock>
+  <WideTextBlock>
+    Podsumowując, rozpoczęcie nauki pen spinningu jest bardzo proste, i na samym
+    początku nie wymaga od ciebie żadnych wydatków. Każdy może zacząć kręcić,
+    niezależnie od wieku czy innych czynników, ponieważ posiadając jedno sprawne
+    oko (opcjonalnie) i jedna sprawną dłoń bez problemu możesz zagłębiać się w
+    sztukę pen spinningu.
+  </WideTextBlock>
+
+  <ArticleFooter author="MAksesOwicz" align="right" />
+  <Footer />
 </template>
 
 <style lang="scss" scoped>

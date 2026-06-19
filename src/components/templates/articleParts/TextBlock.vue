@@ -12,12 +12,16 @@ defineProps({
     type: String,
     default: "",
   },
+  fit: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
 <template>
   <div class="block" :class="align">
-    <img v-if="src" :src="src" :alt="alt" class="image" />
+    <img v-if="src" :src="src" :alt="alt" class="image" :id="fit" />
     <div class="text">
       <slot />
     </div>
@@ -27,13 +31,19 @@ defineProps({
 <style lang="scss" scoped>
 @use "../../../styles/base.scss" as *;
 
+@use "../../../styles/base.scss" as *;
+
 .block {
   width: 60%;
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  //   column-gap: 20px;
   align-items: start;
+  position: relative; // <- DODANE: ustala containing block
+}
+
+#c {
+  object-fit: contain !important;
 }
 
 .text {
@@ -58,12 +68,13 @@ defineProps({
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 1px;
-  margin: 15%;
-  margin-top: 25%;
-  margin-bottom: 0px;
+  margin: 0 15%; // <- ZMIENIONE: tylko poziomy margines (centrowanie), bez vertical
   filter: contrast(150%) brightness(95%);
 
-  animation: img-margin ease forwards;
+  position: absolute; // <- ZMIENIONE z "relative" na "absolute"
+  top: 0%;
+
+  animation: img-anim ease forwards;
   animation-timeline: view();
   animation-range: entry 10% cover 150%;
 }
@@ -85,19 +96,18 @@ defineProps({
 
   .text {
     grid-area: text;
-    // text-align: right;
   }
   .image {
     grid-area: image;
   }
 }
 
-@keyframes img-margin {
+@keyframes img-anim {
   0% {
-    margin-top: 25%;
+    top: 0%;
   }
   100% {
-    margin-top: 75%;
+    top: 60%;
   }
 }
 </style>

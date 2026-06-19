@@ -23,7 +23,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-@use "../../styles/base.scss" as *;
+@use "../../../styles/base.scss" as *;
 
 * {
   color: $white;
@@ -50,6 +50,7 @@ const props = defineProps({
     p {
       width: 50%;
       font-size: $font-size-small;
+      font-weight: 700;
     }
   }
 

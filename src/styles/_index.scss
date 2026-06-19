@@ -36,7 +36,7 @@ dt:hover:has(.l) {
 strong {
   color: #278d01;
   transition: 0.3s ease-in-out;
-  font-weight: 700 !important;
+  font-weight: 900 !important;
 
   &.l::before {
     content: "";
@@ -65,6 +65,12 @@ ul {
   li {
     margin: 10px;
     letter-spacing: 1px;
+  }
+  dd {
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 25px;
   }
 }
 
