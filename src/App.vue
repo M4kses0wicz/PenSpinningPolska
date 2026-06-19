@@ -44,6 +44,7 @@ router.afterEach(() => {
   const remaining = Math.max(0, MIN_LOADING_TIME - elapsed);
 
   setTimeout(() => {
+    lenis.scrollTo(0, { immediate: true });
     isLoading.value = false;
   }, remaining);
 });
