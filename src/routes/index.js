@@ -6,13 +6,19 @@ import PPPHistory from "../components/pages/History.vue";
 import Events from "../components/pages/Events.vue";
 import ArticlesPage from "../components/pages/ArticlesPage.vue";
 import NotFound from "../components/pages/NotFound.vue";
+import Notation from "../components/pages/articles/Notation.vue";
+import PenMods from "../components/pages/articles/PenMods.vue";
+import PsStyle from "../components/pages/articles/PsStyle.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/Artykuly/JakZaczac", component: HowToStart },
   { path: "/Historia", component: PPPHistory },
   { path: "/Wydarzenia", component: Events },
   { path: "/Artykuly", component: ArticlesPage },
+  { path: "/Artykuly/JakZaczac", component: HowToStart },
+  { path: "/Artykuly/PodstawyNotacji", component: Notation },
+  { path: "/Artykuly/StylWPenspinningu", component: PsStyle },
+  { path: "/Artykuly/Modyfikacje", component: PenMods },
   { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 

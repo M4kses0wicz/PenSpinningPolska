@@ -10,6 +10,10 @@ const { grow, growS, reset, video } = useCursor();
 const router = useRouter();
 
 import { useRouter } from "vue-router";
+
+function Soon() {
+  alert("Już wkrótce!");
+}
 </script>
 
 <template>
@@ -25,6 +29,7 @@ import { useRouter } from "vue-router";
       context="Od zera do penspinnera"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Artykuly/JakZaczac')"
     />
     <ArticleCard
       title="Poradniki tworzenia najpopularniejszych Pen Modów."
@@ -34,15 +39,17 @@ import { useRouter } from "vue-router";
       context="Nerd Talk"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Artykuly/Modyfikacje')"
     />
     <ArticleCard
-      title="Styl w Penspinningu - O stylu w pen spinningu słów kilka."
+      title="Styl w Pen spinningu - O stylu w Pen spinningu słów kilka."
       description="Nie raz przeglądając filmy pen spinnerów natykamy się na wszelkie komentarze wychwalające lub potępiające styl kręcenia danego pen spinnera. Ale czym w ogóle jest styl w pen spinningu?"
       author="Pari"
       topic="Styl"
       context="Nerd Talk"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Artykuly/StylWPenspinningu')"
     />
     <ArticleCard
       title="Standardy zapisów tricków - Podstawy Notacji Angielskiej."
@@ -52,6 +59,7 @@ import { useRouter } from "vue-router";
       context="Nerd Talk"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Artykuly/PodstawyNotacji')"
     />
     <ArticleCard
       title="Podstawy Pen Moddingu - Twoje małe dzieło sztuki."
@@ -61,6 +69,7 @@ import { useRouter } from "vue-router";
       context="Nerd Talk"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="Soon()"
     />
     <ArticleCard
       title="Zaawansowane zagadnienia notacji angielskiej."
@@ -70,6 +79,7 @@ import { useRouter } from "vue-router";
       context="Nerd Talk"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="Soon()"
     />
   </section>
   <div class="margin-block"></div>
