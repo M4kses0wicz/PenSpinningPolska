@@ -31,15 +31,13 @@ defineProps({
 <style lang="scss" scoped>
 @use "../../../styles/base.scss" as *;
 
-@use "../../../styles/base.scss" as *;
-
 .block {
   width: 60%;
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
-  position: relative; // <- DODANE: ustala containing block
+  position: relative;
 }
 
 #c {
@@ -68,11 +66,12 @@ defineProps({
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 1px;
-  margin: 0 15%; // <- ZMIENIONE: tylko poziomy margines (centrowanie), bez vertical
+  margin: 0 15%;
   filter: contrast(150%) brightness(95%);
 
-  position: absolute; // <- ZMIENIONE z "relative" na "absolute"
-  top: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 20px));
 
   animation: img-anim ease forwards;
   animation-timeline: view();
@@ -104,10 +103,10 @@ defineProps({
 
 @keyframes img-anim {
   0% {
-    top: 0%;
+    transform: translateY(calc(-50% - 20px));
   }
   100% {
-    top: 60%;
+    transform: translateY(calc(-50% + 25px));
   }
 }
 </style>
