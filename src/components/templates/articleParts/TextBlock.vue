@@ -67,7 +67,7 @@ defineProps({
   object-fit: cover;
   border-radius: 1px;
   margin: 0 15%;
-  filter: contrast(150%) brightness(95%);
+  // filter: contrast(150%) brightness(95%);
 
   position: absolute;
   top: 50%;
