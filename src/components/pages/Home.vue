@@ -72,7 +72,7 @@ onUnmounted(() => {
     <div class="wrapper">
       <div
         class="container"
-        @click="router.push('/JakZaczac')"
+        @click="router.push('/Artykuly/JakZaczac')"
         @mouseover="grow"
         @mouseleave="reset"
       >
