@@ -24,6 +24,7 @@ import { useRouter } from "vue-router";
       context="MP 2026"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Wydarzenia/MP26')"
     />
     <EventCard
       title="20 urodziny Portalu Polskich Penspinnerów!"

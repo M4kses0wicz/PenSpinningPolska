@@ -10,6 +10,7 @@ import Notation from "../components/pages/articles/Notation.vue";
 import PenMods from "../components/pages/articles/PenMods.vue";
 import PsStyle from "../components/pages/articles/PsStyle.vue";
 import MP24 from "../components/pages/news/MP24.vue";
+import MP26 from "../components/pages/news/MP26.vue";
 import PPP20Years from "../components/pages/news/20YearsOfPPP.vue";
 
 const routes = [
@@ -17,6 +18,7 @@ const routes = [
   { path: "/Historia", component: PPPHistory },
   { path: "/Wydarzenia", component: Events },
   { path: "/Wydarzenia/MP24", component: MP24 },
+  { path: "/Wydarzenia/MP26", component: MP26 },
   { path: "/Wydarzenia/20LatPPP", component: PPP20Years },
   { path: "/Artykuly", component: ArticlesPage },
   { path: "/Artykuly/JakZaczac", component: HowToStart },
