@@ -102,9 +102,7 @@ onUnmounted(() => {
           pomocą palców. Jest odmianą żonglerki kontaktowej, polegającą na
           wykonywaniu obrotów, płynnych przejść między palcami oraz różnych
           kombinacji trików. Łączy w sobie elementy zręczności, precyzji,
-          kreatywności i ekspresji artystycznej. Penspinning może być uprawiany
-          zarówno rekreacyjnie, jako forma relaksu i rozwijania umiejętności
-          manualnych, jak i w formie rywalizacji. Osoba zajmująca się
+          kreatywności i ekspresji artystycznej. Osoba zajmująca się
           penspinningiem nazywana jest pen spinnerem.
         </p>
       </div>
@@ -479,10 +477,10 @@ section {
         .vid {
           width: 100%;
           aspect-ratio: 16/8;
-          overflow: hidden;
+          // overflow: hidden;
           cursor: pointer;
 
-          &::before {
+          &::after {
             content: "Buła: some things never change - same spot, same guys, same hobby, 9 years later";
             opacity: 0.75;
             display: block;
@@ -494,6 +492,7 @@ section {
           img {
             width: 100%;
             height: 100%;
+            aspect-ratio: 16/8;
             object-fit: cover;
             filter: brightness(70%);
           }
@@ -501,6 +500,7 @@ section {
           video {
             width: 100%;
             height: 100%;
+            aspect-ratio: 16/8;
             object-fit: cover;
             filter: brightness(100%);
           }
