@@ -32,6 +32,7 @@ import { useRouter } from "vue-router";
       context="Historia"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Wydarzenia/20LatPPP')"
     />
     <EventCard
       title="XII Mistrzostwa Polski w Pen Spinningu 2024"

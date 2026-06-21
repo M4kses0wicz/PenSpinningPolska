@@ -59,6 +59,11 @@ const props = defineProps({
 
   &#right {
     margin-left: 40%;
+
+    p {
+      width: 100%;
+      text-align: right;
+    }
   }
 }
 
