@@ -54,7 +54,7 @@ function Soon() {
     <ArticleCard
       title="Standardy zapisów tricków - Podstawy Notacji Angielskiej."
       description="Ten artykuł ma na celu przybliżyć Wam standardy w zapisie tricków/combosów. Są tutaj tłumaczenia artykułów The Naming Committee. Należy się do tego stosować, aby uniknąć nieporozumień i poprawnie nazywać tricki."
-      author="Pari"
+      author="Krasnal, Rarka, Dercen"
       topic="Notacja"
       context="Nerd Talk"
       @mouseenter="grow()"

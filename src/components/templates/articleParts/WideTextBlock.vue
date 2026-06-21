@@ -14,7 +14,13 @@ p {
   width: 60%;
   font-family: "inter", sans-serif;
   color: $white;
-  font-size: $font-size-body;
+
+  font-size: $font-size-title;
+
+  @include Media("<", 1750px) {
+    font-size: $font-size-body;
+  }
+
   font-weight: 300;
 }
 </style>

@@ -47,7 +47,12 @@ defineProps({
 .text {
   font-family: "inter", sans-serif;
   color: $white;
-  font-size: $font-size-body;
+  font-size: $font-size-title;
+
+  @include Media("<", 1750px) {
+    font-size: $font-size-body;
+  }
+
   font-weight: 300;
 
   p {
@@ -64,6 +69,7 @@ defineProps({
 .image {
   width: 70%;
   aspect-ratio: 1/1;
+
   object-fit: cover;
   border-radius: 1px;
   margin: 0 15%;

@@ -8,8 +8,8 @@ import WideTextBlock from "../../templates/articleParts/WideTextBlock.vue";
 import SubHeading from "../../templates/articleParts/SubHeading.vue";
 import TextBlock from "../../templates/articleParts/TextBlock.vue";
 import ArticleFooter from "../../templates/articleParts/ArticleFooter.vue";
-import PhotosSection from "../../templates/articleParts/PhotosSection.vue";
 
+import penMods from "../../../assets/penmods.jpg";
 import neoIvan from "../../../assets/Neoivanmod.jpg";
 import apogeumM8 from "../../../assets/Apogeum-m8.jpg";
 
@@ -35,21 +35,21 @@ import { useRouter } from "vue-router";
     nauce trików, sprawia, że wykonywanie ewolucji jest bardziej komfortowe oraz
     efektowne.
   </WideTextBlock>
-  <WideTextBlock>
-    Rozróżniamy dwa rodzaje modyfikacji, jednostronne (<strong
-      >SC – Single Capped, Single Sided</strong
-    >) oraz dwustronne (<strong>DC – Double Capped, Double Sided</strong>). Z
-    reguły modyfikacje jednostronne zachowują postać normalnego długopisu, są
-    jednak dłuższe oraz ładnie ozdobione. Mody dwustronne są zbudowane
-    przeważnie z różnych pisaków, zmazików oraz są łatwiejsze w opanowaniu, z
-    reguły są lepiej wyważone.
-  </WideTextBlock>
   <TextBlock
     align="right"
-    :src="neoIvan"
+    :src="penMods"
     alt="ilustracja przedstawiająca sloty"
-    fit="c"
   >
+    <p>
+      Rozróżniamy dwa rodzaje modyfikacji, jednostronne (<strong
+        >SC – Single Capped, Single Sided</strong
+      >) oraz dwustronne (<strong>DC – Double Capped, Double Sided</strong>). Z
+      reguły modyfikacje jednostronne zachowują postać normalnego długopisu, są
+      jednak dłuższe oraz ładnie ozdobione. Mody dwustronne są zbudowane
+      przeważnie z różnych pisaków, zmazików oraz są łatwiejsze w opanowaniu, z
+      reguły są lepiej wyważone.
+    </p>
+    <br />
     <p>
       To którą modyfikacją kręci pen spinner zależy głównie od jego preferencji,
       stylu, przyzwyczajenia. Nie ma modyfikacji najlepszych, każdemu pasuje co
@@ -71,14 +71,6 @@ import { useRouter } from "vue-router";
     </p></TextBlock
   >
   <SubHeading text="Poradniki do Polskich Modów:" tag="h2" />
-  <PhotosSection
-    :src1="apogeumM8"
-    alt1="zdjęcie modyfikacji apogeum m8"
-    text1="Apogeum M8"
-    :src2="neoIvan"
-    alt2="zdjęcie modyfikacji neo ivan"
-    text2="Neo Ivan"
-  ></PhotosSection>
 </template>
 
 <style lang="scss" scoped>
