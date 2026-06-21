@@ -233,7 +233,7 @@ nav {
       }
 
       i:hover {
-        color: $green;
+        // color: $green;
         // filter: drop-shadow(0 0 5px $black);
         scale: 1.1;
       }

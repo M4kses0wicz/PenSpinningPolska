@@ -9,11 +9,13 @@ import NotFound from "../components/pages/NotFound.vue";
 import Notation from "../components/pages/articles/Notation.vue";
 import PenMods from "../components/pages/articles/PenMods.vue";
 import PsStyle from "../components/pages/articles/PsStyle.vue";
+import MP24 from "../components/pages/news/MP24.vue";
 
 const routes = [
   { path: "/", component: Home },
   { path: "/Historia", component: PPPHistory },
   { path: "/Wydarzenia", component: Events },
+  { path: "/Wydarzenia/MP24", component: MP24 },
   { path: "/Artykuly", component: ArticlesPage },
   { path: "/Artykuly/JakZaczac", component: HowToStart },
   { path: "/Artykuly/PodstawyNotacji", component: Notation },

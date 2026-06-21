@@ -1,0 +1,92 @@
+<script setup>
+const props = defineProps({
+  src: {
+    type: String,
+    default: null,
+  },
+  text: {
+    type: String,
+    default: "",
+  },
+  align: {
+    type: String,
+    default: "",
+  },
+  line: {
+    type: String,
+    default: "w",
+  },
+});
+</script>
+
+<template>
+  <div class="wrapper" :id="align">
+    <div class="top-text">
+      <p>
+        {{ text }}
+      </p>
+    </div>
+    <div class="line">
+      <div :class="line"></div>
+    </div>
+    <iframe
+      :src="src"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+      "
+      allowfullscreen
+    ></iframe>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use "../../../styles/base.scss" as *;
+
+* {
+  color: $white;
+  font-family: "inter", sans-serif;
+}
+
+.wrapper {
+  width: 40%;
+  margin-left: 20%;
+
+  &#right {
+    margin-left: 40%;
+  }
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-top: 10px;
+}
+
+p {
+  font-size: $font-size-small;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+
+  div {
+    width: 100%;
+    height: 3px;
+
+    &.g {
+      background: $green;
+    }
+
+    &.w {
+      background: $white;
+    }
+  }
+}
+</style>

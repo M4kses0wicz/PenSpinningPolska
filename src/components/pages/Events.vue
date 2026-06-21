@@ -40,6 +40,7 @@ import { useRouter } from "vue-router";
       context="MP 2024"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      @click="router.push('/Wydarzenia/MP24')"
     />
     <EventCard
       title="18 urodziny Portalu Polskich Penspinnerów! - Meeting we Wrocławiu"
