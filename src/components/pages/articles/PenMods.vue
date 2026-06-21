@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+
 import BackgroundLines from "../../UI/BackgroundLines.vue";
 import Navbar from "../../UI/Navbar.vue";
 import Footer from "../../UI/Footer.vue";
@@ -12,8 +14,23 @@ import ArticleFooter from "../../templates/articleParts/ArticleFooter.vue";
 import penMods from "../../../assets/penmods.jpg";
 import neoIvan from "../../../assets/Neoivanmod.jpg";
 import apogeumM8 from "../../../assets/Apogeum-m8.jpg";
+import gmod from "../../../assets/gmod.jpg";
+import linestyle from "../../../assets/linestyle.jpg";
+import mrz from "../../../assets/mrz.jpg";
+import zolty from "../../../assets/żółty.jpg";
+
+import { useCursor } from "../../../composables/useCursor.js";
+const { grow, growS, reset, video } = useCursor();
 
 import { useRouter } from "vue-router";
+
+// aktualnie hoverowane zdjęcie - domyślnie pierwszy mod, żeby panel nie był pusty
+const hoveredMod = ref(neoIvan);
+
+const setHovered = (event, src) => {
+  grow(event);
+  hoveredMod.value = src;
+};
 </script>
 
 <template>
@@ -70,9 +87,176 @@ import { useRouter } from "vue-router";
       przeróżnych modyfikacji oraz recenzje na ich temat.
     </p></TextBlock
   >
+
   <SubHeading text="Poradniki do Polskich Modów:" tag="h2" />
+
+  <div class="mods-section">
+    <div class="line"><div class="w"></div></div>
+
+    <ul class="mods-list">
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, neoIvan)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">N</span>eo Ivan</span>
+        </div>
+      </li>
+
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, apogeumM8)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">A</span>pogeum M8</span>
+        </div>
+      </li>
+
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, linestyle)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">L</span>ine Style</span>
+        </div>
+      </li>
+
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, gmod)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">G</span>-Mod</span>
+        </div>
+      </li>
+
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, mrz)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">M</span>r. Z</span>
+        </div>
+      </li>
+
+      <li
+        class="mod-item"
+        @mouseenter="(e) => setHovered(e, zolty)"
+        @mouseleave="reset"
+        @click=""
+      >
+        <div class="mod-text">
+          <span class="mod-name"><span class="accent">Ż</span>ółty</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="mod-display">
+      <transition name="fade" mode="out-in">
+        <img :key="hoveredMod" :src="hoveredMod" class="mod-display-img" />
+      </transition>
+    </div>
+  </div>
+  <Footer></Footer>
 </template>
 
 <style lang="scss" scoped>
 @use "../../../styles/base.scss" as *;
+
+* {
+  font-family: "inter", sans-serif;
+}
+
+.mods-section {
+  width: 60%;
+  margin: 0 0 50px 20%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.line {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+
+  div {
+    width: 100%;
+    height: 3px;
+
+    &.g {
+      background: $green;
+    }
+
+    &.w {
+      background: $white;
+    }
+  }
+}
+
+.mods-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mod-item {
+  padding: 0;
+  cursor: pointer;
+}
+
+.mod-text {
+  padding: 8px 8px 8px 0;
+}
+
+.mod-name {
+  font-size: $font-size-subheading;
+  font-weight: 700;
+  color: $white;
+  transition: color 0.25s ease;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.mod-item:hover .mod-name {
+  color: $green;
+}
+
+.mod-display {
+  position: sticky;
+  top: 60px;
+  height: 480px;
+  overflow: hidden;
+  background-color: rgba($white, 0.05);
+  padding: 15px;
+}
+
+.mod-display-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
