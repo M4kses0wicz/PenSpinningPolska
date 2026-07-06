@@ -61,23 +61,108 @@ import { useRouter } from "vue-router";
   </TextBlock>
   <TextBlock>
     <p>
-      1. Spiłuj krawędzie obu śrub M8, zaokrąglając ich rogi, aby nie przecinały
-      gripów. Pomijanie tego kroku spowoduje rozcinane gripów przez śruby
+      <strong>1.</strong> Spiłuj krawędzie obu śrub M8, zaokrąglając ich rogi,
+      aby nie przecinały gripów. Pomijanie tego kroku spowoduje rozcinane gripów
+      przez śruby
     </p>
   </TextBlock>
-  <Image :src="apogeumM8_2" alt="zdjęcie numer 2" line="g" size="sm" />
+  <Image
+    :src="apogeumM8_2"
+    alt="zdjęcie numer 2"
+    line="g"
+    size="sm"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
 
   <TextBlock align="right">
     <p>
-      2. Wyjmij tylne backplugi z dwóch markerów Giotto Turbo Maxi i wkręć po
-      jednej śrubie M8 do każdego backpluga. Pasowanie jest bardzo ciasne, więc
-      w razie potrzeby rozpiłuj wnętrze backpluga okrągłym pilnikiem.
+      <strong>2.</strong> Wyjmij tylne backplugi z dwóch markerów Giotto Turbo
+      Maxi i wkręć po jednej śrubie M8 do każdego backpluga. Pasowanie jest
+      bardzo ciasne, więc w razie potrzeby rozpiłuj wnętrze backpluga okrągłym
+      pilnikiem.
     </p>
   </TextBlock>
-  <Image :src="apogeumM8_3" alt="zdjęcie numer 3" align="right" />
+  <Image
+    :src="apogeumM8_3"
+    alt="zdjęcie numer 3"
+    align="right"
+    size="sm"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+
+  <TextBlock>
+    <p>
+      <strong>3.</strong> Wytnij dwa odcinki body Giotto o długości ok. 1,5 cm-2
+      cm, w zależności od pożądanej długości moda. Nasuń przygotowane odcinki
+      Giotto na backpluga z śrubą. To są nasze capy.
+    </p>
+  </TextBlock>
+  <Image
+    :src="apogeumM8_4"
+    alt="zdjęcie numer 4"
+    size="sm"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+  <div class="margin-block"></div>
+  <TextBlock align="right">
+    <strong>4.</strong>Owiń dolną część backplugów taśmą papierową, jeśli jest
+    to potrzebne do uzyskania ciasnego pasowania w Body.<br /><br />
+    <strong>5.</strong>Przygotuj element środkowy: <br />
+    - wytnij ok. 1 cm body Giotto,<br />
+    - wytnij ok. 4 cm body ST, który będzie naszym connectorem<br /><br />
+    <strong>6.</strong>Nasuń przygotowany odcinek Giotto na connector. Jeśli
+    pasowanie jest zbyt ciasne, użyj pilnika okrągłego.<br />
+  </TextBlock>
+  <Image
+    :src="apogeumM8_5"
+    alt="zdjęcie numer 5"
+    size="sm"
+    align="right"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+  <div class="margin-block"></div>
+  <TextBlock>
+    <strong>7.</strong> Połącz dwa body Giotto za pomocą naszego connectora
+  </TextBlock>
+  <Image
+    :src="apogeumM8_6"
+    alt="zdjęcie numer 6"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+  <div class="margin-block"></div>
+
+  <TextBlock align="right">
+    <strong>8.</strong> Włóż oba capy do końców naszego body
+  </TextBlock>
+  <Image
+    :src="apogeumM8_7"
+    alt="zdjęcie numer 7"
+    align="right"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+  <TextBlock>
+    <strong>9.</strong> Połącz dwa body Giotto za pomocą naszego connectora
+  </TextBlock>
+  <Image
+    :src="apogeumM8_8"
+    alt="zdjęcie numer 8"
+    size="sm"
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
   <Footer />
 </template>
 
 <style lang="scss" scoped>
 @use "../../../../styles/base.scss" as *;
+
+.margin-block {
+  margin: 25px 0px;
+}
 </style>

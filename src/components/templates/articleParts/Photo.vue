@@ -69,8 +69,9 @@ const props = defineProps({
 
 img {
   width: 100%;
-  aspect-ratio: 16/9;
+  // aspect-ratio: 16/9;
   margin-top: 10px;
+  object-fit: contain;
 }
 
 p {
