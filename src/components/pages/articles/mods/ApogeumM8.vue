@@ -147,7 +147,8 @@ import { useRouter } from "vue-router";
     @mouseleave="reset()"
   />
   <TextBlock>
-    <strong>9.</strong> Połącz dwa body Giotto za pomocą naszego connectora
+    <strong>9.</strong> Nasuń gripy Temu Moda na przygotowane capy. Dodaj
+    dodatkowe gripy dekoracyjne według własnych preferencji.
   </TextBlock>
   <Image
     :src="apogeumM8_8"
@@ -156,6 +157,16 @@ import { useRouter } from "vue-router";
     @mouseenter="growS()"
     @mouseleave="reset()"
   />
+  <div class="margin-block"></div>
+  <Image
+    :src="apogeumM8_9"
+    alt="zdjęcie numer 9"
+    align="right"
+    text="Gotowe! - Apogeum M8 jest ukończony."
+    @mouseenter="growS()"
+    @mouseleave="reset()"
+  />
+  <div class="margin-block"></div>
   <Footer />
 </template>
 
