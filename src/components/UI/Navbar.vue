@@ -241,6 +241,11 @@ nav {
 
     .copy {
       font-size: $font-size-small;
+
+      @include Media("<", 1750px) {
+        font-size: $font-size-small-m;
+      }
+
       opacity: 0.5;
       text-align: right;
       align-self: flex-end;
@@ -248,6 +253,10 @@ nav {
 
       a {
         font-size: calc($font-size-small * 0.9);
+
+        @include Media("<", 1750px) {
+          font-size: calc($font-size-small-m * 0.9);
+        }
       }
 
       a:hover {

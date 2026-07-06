@@ -20,6 +20,10 @@ const props = defineProps({
     type: String,
     default: "w",
   },
+  size: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
@@ -33,7 +37,7 @@ const props = defineProps({
     <div class="line">
       <div :class="line"></div>
     </div>
-    <img :src="src" :alt="alt"></img>
+    <img :src="src" :alt="alt" :class="size"></img>
   </div>
 </template>
 
@@ -48,6 +52,10 @@ const props = defineProps({
 .wrapper {
   width: 40%;
   margin-left: 20%;
+
+  &:has(.sm){
+    width: 20%;
+  }
 
   &#right {
     margin-left: 40%;

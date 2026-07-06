@@ -23,8 +23,8 @@ import { useCursor } from "../../../composables/useCursor.js";
 const { grow, growS, reset, video } = useCursor();
 
 import { useRouter } from "vue-router";
+const router = useRouter();
 
-// aktualnie hoverowane zdjęcie - domyślnie pierwszy mod, żeby panel nie był pusty
 const hoveredMod = ref(neoIvan);
 
 const setHovered = (event, src) => {
@@ -109,7 +109,7 @@ const setHovered = (event, src) => {
         class="mod-item"
         @mouseenter="(e) => setHovered(e, apogeumM8)"
         @mouseleave="reset"
-        @click=""
+        @click="router.push('/Artykuly/Modyfikacje/ApogeumM8')"
       >
         <div class="mod-text">
           <span class="mod-name"><span class="accent">A</span>pogeum M8</span>

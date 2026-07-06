@@ -710,7 +710,7 @@ section {
         opacity: 0.75;
         display: block;
         font-size: $font-size-small;
-        text-align: right;
+        text-align: left;
         width: 100%;
       }
 

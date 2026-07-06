@@ -71,4 +71,10 @@ router.afterEach(() => {
 .fade-leave-to {
   opacity: 0;
 }
+
+// @media (max-width: 1340px) {
+//   #app {
+//     display: none;
+//   }
+// }
 </style>
