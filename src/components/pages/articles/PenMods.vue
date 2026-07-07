@@ -142,7 +142,7 @@ const setHovered = (event, src) => {
         class="mod-item"
         @mouseenter="(e) => setHovered(e, mrz)"
         @mouseleave="reset"
-        @click=""
+        @click="router.push('/Artykuly/Modyfikacje/Mr-Z')"
       >
         <div class="mod-text">
           <span class="mod-name"><span class="accent">M</span>r. Z</span>

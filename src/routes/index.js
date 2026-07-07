@@ -15,6 +15,7 @@ import PPP20Years from "../components/pages/news/20YearsOfPPP.vue";
 import ApogeumM8 from "../components/pages/articles/mods/ApogeumM8.vue";
 import Zolty from "../components/pages/articles/mods/Zolty.vue";
 import GibkiMod from "../components/pages/articles/mods/GibkiMod.vue";
+import MrZ from "../components/pages/articles/mods/MrZ.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -31,6 +32,7 @@ const routes = [
   { path: "/Artykuly/Modyfikacje/ApogeumM8", component: ApogeumM8 },
   { path: "/Artykuly/Modyfikacje/Zolty", component: Zolty },
   { path: "/Artykuly/Modyfikacje/G-mod", component: GibkiMod },
+  { path: "/Artykuly/Modyfikacje/Mr-Z", component: MrZ },
   { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 
