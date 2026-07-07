@@ -13,6 +13,7 @@ import MP24 from "../components/pages/news/MP24.vue";
 import MP26 from "../components/pages/news/MP26.vue";
 import PPP20Years from "../components/pages/news/20YearsOfPPP.vue";
 import ApogeumM8 from "../components/pages/articles/mods/ApogeumM8.vue";
+import Zolty from "../components/pages/articles/mods/Zolty.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -27,6 +28,7 @@ const routes = [
   { path: "/Artykuly/StylWPenspinningu", component: PsStyle },
   { path: "/Artykuly/Modyfikacje", component: PenMods },
   { path: "/Artykuly/Modyfikacje/ApogeumM8", component: ApogeumM8 },
+  { path: "/Artykuly/Modyfikacje/Zolty", component: Zolty },
   { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 
