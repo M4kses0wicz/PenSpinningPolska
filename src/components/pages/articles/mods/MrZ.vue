@@ -15,6 +15,7 @@ import Video from "../../../templates/articleParts/Video.vue";
 const src = "https://www.youtube.com/embed/GKSBJaG1-eA?si=A6sqi_dL9AoqCrad";
 
 import MrZ from "../../../../assets/mrz.jpg";
+import MrZ2 from "../../../../assets/mrz-2.jpg";
 
 import { useCursor } from "../../../../composables/useCursor.js";
 const { grow, growS, reset, video } = useCursor();
@@ -29,10 +30,11 @@ import { useRouter } from "vue-router";
     title="Mr. Z – Instrukcja Video"
     topic="Pen Modding"
     context="Nerd Talk"
-    :src="MrZ"
+    :src="MrZ2"
     s
     alt="zdjęcie modyfikacji"
   />
+  <div class="margin-block"></div>
   <div class="margin-block"></div>
 
   <Video :src="src" text="Tutorial" align="right" />
@@ -45,6 +47,6 @@ import { useRouter } from "vue-router";
 @use "../../../../styles/base.scss" as *;
 
 .margin-block {
-  margin: 25px 0px;
+  margin: 27.5px 0px;
 }
 </style>
