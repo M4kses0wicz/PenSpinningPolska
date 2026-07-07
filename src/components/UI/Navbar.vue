@@ -134,6 +134,9 @@ dt {
   @include Media("<", 1650px) {
     font-size: $font-size-subheading-m !important;
   }
+  @include Media("<", 1300px) {
+    font-size: $font-size-subheading-s !important;
+  }
 }
 
 dd {
@@ -141,11 +144,18 @@ dd {
     font-size: $font-size-body-m !important;
     width: 75% !important;
   }
+  @include Media("<", 1300px) {
+    font-size: $font-size-body-s !important;
+    width: 85% !important;
+  }
 }
 
 .navitem p {
   @include Media("<", 1650px) {
     font-size: $font-size-subheading-m !important;
+  }
+  @include Media("<", 1300px) {
+    font-size: $font-size-subheading-s !important;
   }
 }
 
@@ -154,10 +164,17 @@ dd {
     @include Media("<", 1650px) {
       font-size: $font-size-title-m !important;
     }
+    @include Media("<", 1300px) {
+      font-size: $font-size-title-s !important;
+    }
   }
 
   @include Media("<", 1650px) {
     gap: 30px !important;
+  }
+
+  @include Media("<", 1300px) {
+    gap: 15px !important;
   }
 }
 

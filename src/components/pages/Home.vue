@@ -405,11 +405,24 @@ section {
       font-size: $font-size-big-s !important;
       font-weight: 700 !important;
     }
+    @include Media("<", 1350px) {
+      font-size: $font-size-big-xs !important;
+      font-weight: 700 !important;
+    }
+  }
+
+  h4 {
+    @include Media("<", 1350px) {
+      font-size: $font-size-subheading-m !important;
+    }
   }
 
   p {
     @include Media("<", 2080px) {
       font-size: $font-size-body-m !important;
+    }
+    @include Media("<", 1300px) {
+      font-size: $font-size-body-s !important;
     }
   }
 
@@ -673,6 +686,12 @@ section {
 
     .video-content {
       width: 66.666%;
+      @include Media("<", 1370px) {
+        margin-bottom: 50px;
+      }
+      @include Media("<", 1100px) {
+        margin-bottom: 100px;
+      }
     }
 
     .text-content {
@@ -683,6 +702,10 @@ section {
       animation: text-margin2 ease forwards;
       animation-timeline: view();
       animation-range: entry 10% cover 150%;
+
+      @include Media("<", 1750px) {
+        animation-name: text-margin3 !important;
+      }
 
       h4 {
         font-size: $font-size-subheading;
@@ -806,6 +829,14 @@ section {
   }
   100% {
     margin-top: 150px;
+  }
+}
+@keyframes text-margin3 {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 100px;
   }
 }
 </style>
