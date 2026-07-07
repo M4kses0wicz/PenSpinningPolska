@@ -339,6 +339,9 @@ main {
         @include Media("<", 1750px) {
           font-size: $font-size-heading-m !important;
         }
+        @include Media("<", 1370px) {
+          font-size: $font-size-heading-s !important;
+        }
       }
 
       p {
@@ -409,11 +412,17 @@ section {
       font-size: $font-size-big-xs !important;
       font-weight: 700 !important;
     }
+    @include Media("<", 1070px) {
+      font-size: $font-size-big-heading !important;
+    }
   }
 
   h4 {
     @include Media("<", 1350px) {
       font-size: $font-size-subheading-m !important;
+    }
+    @include Media("<", 1070px) {
+      font-size: $font-size-subheading-s !important;
     }
   }
 
@@ -431,6 +440,15 @@ section {
       &::before,
       &::after {
         font-size: $font-size-small-m !important;
+      }
+    }
+  }
+
+  .triple-box-container {
+    .box {
+      @include Media("<", 1070px) {
+        width: 35px;
+        height: 35px;
       }
     }
   }
@@ -464,6 +482,11 @@ section {
         @include Media("<", 1750px) {
           animation-name: text-margin-m !important;
           margin-top: 100px;
+        }
+
+        @include Media("<", 1350px) {
+          animation-name: text-margin-m2 !important;
+          margin-top: 50px;
         }
 
         h4 {
@@ -673,6 +696,11 @@ section {
   &.how-to-start {
     .triple-box-container {
       margin-top: 25px;
+
+      @include Media("<", 1100px) {
+        margin: 0px;
+        transform: translateY(-25px);
+      }
     }
 
     h2 {
@@ -802,6 +830,15 @@ section {
   }
   100% {
     margin-top: 200px;
+  }
+}
+
+@keyframes text-margin-m2 {
+  0% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-top: 125px;
   }
 }
 

@@ -53,6 +53,10 @@ defineProps({
     font-size: $font-size-body;
   }
 
+  @include Media("<", 1200px) {
+    font-size: $font-size-body-m;
+  }
+
   font-weight: 300;
 
   p {
