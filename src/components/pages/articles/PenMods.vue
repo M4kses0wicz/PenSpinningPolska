@@ -131,7 +131,7 @@ const setHovered = (event, src) => {
         class="mod-item"
         @mouseenter="(e) => setHovered(e, gmod)"
         @mouseleave="reset"
-        @click=""
+        @click="router.push('/Artykuly/Modyfikacje/G-mod')"
       >
         <div class="mod-text">
           <span class="mod-name"><span class="accent">G</span>-Mod</span>
