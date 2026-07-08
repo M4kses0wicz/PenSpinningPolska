@@ -764,15 +764,27 @@ section {
       text-align: right;
       position: relative;
       z-index: 1;
+
+      @include Media("<", 1000px) {
+        text-align: left;
+        width: 70%;
+        transform: translateY(15px);
+      }
     }
 
     .video-content {
       width: 66.666%;
+
       @include Media("<", 1370px) {
         margin-bottom: 50px;
       }
       @include Media("<", 1100px) {
         margin-bottom: 100px;
+      }
+
+      @include Media("<", 1000px) {
+        margin-bottom: 0px;
+        width: 100%;
       }
     }
 
@@ -787,6 +799,11 @@ section {
 
       @include Media("<", 1750px) {
         animation-name: text-margin3 !important;
+      }
+
+      @include Media("<", 1000px) {
+        animation: none !important;
+        width: 100%;
       }
 
       h4 {
@@ -809,6 +826,10 @@ section {
       aspect-ratio: 8/5;
       // overflow: hidden;
       cursor: pointer;
+
+      @include Media("<", 1000px) {
+        margin-top: 25px;
+      }
 
       &::after {
         content: "Penspinning meeting - Warszawa 28.02.2016";
@@ -865,6 +886,10 @@ section {
 
     .content-container {
       display: flex;
+
+      @include Media("<", 1000px) {
+        flex-direction: column-reverse;
+      }
     }
   }
 }
