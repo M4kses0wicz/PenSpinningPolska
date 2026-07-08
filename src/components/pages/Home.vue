@@ -676,6 +676,10 @@ section {
       width: 100%;
       display: flex;
       justify-content: space-between;
+
+      @include Media("<", 1000px) {
+        flex-direction: column-reverse;
+      }
     }
 
     .heading {
@@ -684,6 +688,11 @@ section {
       flex-direction: column;
       align-items: flex-end;
 
+      @include Media("<", 1000px) {
+        width: 100%;
+        height: 150px;
+      }
+
       h2 {
         font-size: $font-size-big;
         font-weight: 900;
@@ -691,6 +700,11 @@ section {
         transform: translateY(-105px);
         position: relative;
         z-index: 1;
+
+        @include Media("<", 1000px) {
+          text-align: right;
+          transform: translateY(-75px);
+        }
       }
 
       .triple-box-container {
@@ -709,6 +723,12 @@ section {
       @include Media("<", 1750px) {
         animation-name: text-margin1-m !important;
         margin-top: 10px;
+      }
+
+      @include Media("<", 1000px) {
+        width: 100%;
+        animation-name: none !important;
+        margin-top: 0px;
       }
 
       h4 {
