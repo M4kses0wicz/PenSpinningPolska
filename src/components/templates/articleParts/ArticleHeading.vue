@@ -42,6 +42,10 @@ const props = defineProps({
     @include Media("<", 1750px) {
       font-size: $font-size-big-heading-m;
     }
+
+    @include Media("<", 1200px) {
+      font-size: $font-size-big-heading-s;
+    }
   }
 
   .top-text {
@@ -51,6 +55,10 @@ const props = defineProps({
       width: 50%;
       font-size: $font-size-small;
       font-weight: 700;
+
+      @include Media("<", 1200px) {
+        font-size: $font-size-small-m;
+      }
     }
   }
 

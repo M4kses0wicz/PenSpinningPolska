@@ -33,10 +33,20 @@ h3 {
 h2 {
   font-size: $font-size-heading-m;
   margin: 50px 0px 25px 0px;
+
+  @include Media("<", 1200px) {
+    font-size: $font-size-heading-s;
+    margin: 35px 0px 25px 0px;
+  }
 }
 
 h3 {
   font-size: $font-size-title;
   margin: 20px 0px 10px 0px;
+
+  @include Media("<", 1200px) {
+    font-size: $font-size-title-m;
+    margin: 10px 0px 5px 0px;
+  }
 }
 </style>
