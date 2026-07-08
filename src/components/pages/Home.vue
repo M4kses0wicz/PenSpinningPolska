@@ -397,6 +397,10 @@ section {
     margin: 150px 0px 200px 20%;
   }
 
+  @include Media("<", 1750px) {
+    margin: 150px 0px 50px 20%;
+  }
+
   color: $white;
   font-family: "Inter", sans-serif;
 
@@ -450,6 +454,10 @@ section {
         width: 35px;
         height: 35px;
       }
+
+      @include Media("<", 1000px) {
+        display: none;
+      }
     }
   }
 
@@ -462,6 +470,11 @@ section {
         transform: translateY(35px);
         position: relative;
         z-index: 1;
+
+        @include Media("<", 1000px) {
+          transform: translateY(20px);
+          width: 100%;
+        }
       }
     }
 
@@ -471,9 +484,21 @@ section {
       width: 100%;
       // border: 1px dashed red;
 
+      @include Media("<", 1000px) {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+
       .text-content {
         width: 33%;
         margin-top: 200px;
+
+        @include Media("<", 1000px) {
+          width: 100%;
+          margin-top: 0px;
+          transform: translateY(-100px);
+        }
 
         animation: text-margin ease forwards;
         animation-timeline: view();
@@ -487,6 +512,11 @@ section {
         @include Media("<", 1350px) {
           animation-name: text-margin-m2 !important;
           margin-top: 50px;
+        }
+
+        @include Media("<", 1000px) {
+          animation-name: none !important;
+          margin-top: 0px;
         }
 
         h4 {
@@ -509,6 +539,10 @@ section {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @include Media("<", 1000px) {
+          width: 100%;
+        }
 
         .vid {
           width: 100%;
