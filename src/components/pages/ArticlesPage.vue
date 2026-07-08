@@ -112,6 +112,10 @@ section {
     @include Media("<", 1750px) {
       font-size: $font-size-big-m !important;
     }
+
+    @include Media("<", 1300px) {
+      font-size: $font-size-big-s !important;
+    }
   }
 }
 </style>

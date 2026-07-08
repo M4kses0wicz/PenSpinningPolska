@@ -33,6 +33,10 @@ const props = defineProps({
   margin: 150px 0px 0px 0px;
   cursor: pointer;
 
+  @include Media("<", 1300px) {
+    margin: 100px 0px 0px 0px;
+  }
+
   &:nth-of-type(2n) {
     text-align: right;
 
@@ -65,6 +69,10 @@ const props = defineProps({
       @include Media("<", 1750px) {
         font-size: $font-size-body-m;
       }
+
+      @include Media("<", 1300px) {
+        font-size: $font-size-body-s;
+      }
     }
   }
 
@@ -77,12 +85,20 @@ const props = defineProps({
       margin: 35px 0px;
     }
 
+    @include Media("<", 1300px) {
+      margin: 20px 0px;
+    }
+
     h2 {
       font-size: $font-size-heading;
       margin-bottom: 5px;
 
       @include Media("<", 1750px) {
         font-size: $font-size-heading-m;
+      }
+
+      @include Media("<", 1300px) {
+        font-size: $font-size-heading-s;
       }
     }
 
@@ -93,6 +109,10 @@ const props = defineProps({
 
       @include Media("<", 1750px) {
         font-size: $font-size-body-m;
+      }
+
+      @include Media("<", 1300px) {
+        font-size: $font-size-body-s;
       }
     }
   }
