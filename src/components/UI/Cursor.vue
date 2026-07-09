@@ -36,6 +36,10 @@ const { cursorX, cursorY, cursorScale, cursorType } = useCursor();
       border-color: $white;
     }
   }
+
+  @include Media("<", 810px) {
+    display: none;
+  }
 }
 .cursor {
   position: fixed;

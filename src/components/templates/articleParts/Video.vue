@@ -57,8 +57,17 @@ const props = defineProps({
   width: 40%;
   margin-left: 20%;
 
+  @include Media("<", 810px) {
+    width: 60%;
+    margin-left: 5%;
+  }
+
   &#right {
     margin-left: 40%;
+
+    @include Media("<", 810px) {
+      margin-left: 35%;
+    }
 
     p {
       width: 100%;

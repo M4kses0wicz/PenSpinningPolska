@@ -27,6 +27,11 @@ h3 {
 
   &.margin {
     margin-left: 20%;
+
+    @include Media("<", 810px) {
+      margin-left: 5%;
+      width: 90%;
+    }
   }
 }
 

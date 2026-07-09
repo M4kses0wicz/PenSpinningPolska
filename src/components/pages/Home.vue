@@ -253,12 +253,20 @@ main {
   .block {
     height: 100%;
     width: 20%;
+
+    @include Media("<", 810px) {
+      width: 0%;
+    }
   }
 
   .logo-container {
     height: 100%;
     width: 60%;
     @include FlexCenter;
+
+    @include Media("<", 810px) {
+      width: 90%;
+    }
 
     .logo {
       aspect-ratio: 1/1;
@@ -290,6 +298,10 @@ main {
       @include FlexCenter(column);
       overflow: hidden;
       background: $black;
+
+      @include Media("<", 810px) {
+        width: calc(30% - 1px);
+      }
     }
 
     .logo-s {
@@ -320,6 +332,10 @@ main {
     @include FlexCenter(column);
     align-items: start;
     font-family: "Inter", sans-serif;
+
+    @include Media("<", 810px) {
+      display: none;
+    }
 
     .container {
       cursor: pointer;
@@ -417,6 +433,11 @@ section {
 
   @include Media("<", 1750px) {
     margin: 150px 0px 50px 20%;
+  }
+
+  @include Media("<", 810px) {
+    width: 90%;
+    margin: 100px 0px 50px 5%;
   }
 
   color: $white;
@@ -686,6 +707,10 @@ section {
           animation: moves 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
           margin-left: 10px;
           margin-top: 5px;
+        }
+
+        @include Media("<", 1000px) {
+          opacity: 0;
         }
       }
     }

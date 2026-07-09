@@ -36,8 +36,18 @@ const props = defineProps({
   width: 40%;
   //   border: 1px red dashed;
 
+  @include Media("<", 810px) {
+    width: 60%;
+    margin: 5% 0px 50px 5%;
+  }
+
   &#right {
     margin: 5% 0px 50px 40%;
+
+    @include Media("<", 810px) {
+      width: 60%;
+      margin: 5% 0px 50px 35%;
+    }
   }
 
   .bottom-text {

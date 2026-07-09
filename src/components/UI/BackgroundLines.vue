@@ -24,6 +24,11 @@
   justify-content: space-evenly;
   align-items: center;
 
+  @include Media("<", 810px) {
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
   .line {
     width: 1px;
     opacity: 0.15;

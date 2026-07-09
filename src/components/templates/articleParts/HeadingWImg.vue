@@ -41,6 +41,11 @@ const props = defineProps({
   display: flex;
   // border: 1px dashed red;
 
+  @include Media("<", 810px) {
+    width: 90%;
+    margin: 10% 0px 50px 5%;
+  }
+
   img {
     position: absolute;
     top: 0%;
@@ -48,11 +53,20 @@ const props = defineProps({
     z-index: -1;
     margin-left: 20%;
     opacity: 30%;
+
+    @include Media("<", 810px) {
+      width: 60%;
+      margin-left: 30%;
+    }
   }
 }
 
 .wrapper {
   width: 66.666%;
+
+  @include Media("<", 810px) {
+    width: 100%;
+  }
 
   h1 {
     font-size: $font-size-big-heading;
@@ -64,6 +78,10 @@ const props = defineProps({
 
     @include Media("<", 1200px) {
       font-size: $font-size-big-heading-s;
+    }
+
+    @include Media("<", 810px) {
+      font-size: $font-size-heading-m;
     }
   }
 
@@ -78,6 +96,10 @@ const props = defineProps({
       @include Media("<", 1200px) {
         font-size: $font-size-small-m;
       }
+
+      @include Media("<", 810px) {
+        width: 33.333%;
+      }
     }
   }
 
@@ -88,6 +110,10 @@ const props = defineProps({
     div {
       width: 50%;
       height: 3px;
+
+      @include Media("<", 810px) {
+        width: 33.333%;
+      }
 
       &.g {
         background: $green;

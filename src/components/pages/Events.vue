@@ -76,6 +76,11 @@ section {
   width: 60%;
   @include FlexCenter(column);
 
+  @include Media("<", 810px) {
+    width: 90%;
+    margin-left: 5%;
+  }
+
   h1 {
     font-size: $font-size-big;
     width: 100%;
@@ -86,6 +91,10 @@ section {
 
     @include Media("<", 1300px) {
       font-size: $font-size-big-s !important;
+    }
+
+    @include Media("<", 810px) {
+      font-size: $font-size-big-xs !important;
     }
   }
 }

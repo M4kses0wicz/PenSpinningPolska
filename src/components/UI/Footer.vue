@@ -24,11 +24,19 @@ footer {
       &.one {
         width: 60%;
         background: $green;
+
+        @include Media("<", 810px) {
+          width: 65%;
+        }
       }
 
       &.two {
         width: 40%;
         background: $white;
+
+        @include Media("<", 810px) {
+          width: 35%;
+        }
       }
     }
   }

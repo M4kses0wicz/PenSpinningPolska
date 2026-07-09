@@ -15,6 +15,11 @@ p {
   font-family: "inter", sans-serif;
   color: $white;
 
+  @include Media("<", 810px) {
+    width: 90%;
+    margin: 10px 0px 10px 5%;
+  }
+
   font-size: $font-size-title;
 
   @include Media("<", 1750px) {

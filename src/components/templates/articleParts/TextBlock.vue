@@ -38,6 +38,10 @@ defineProps({
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   position: relative;
+
+  @include Media("<", 810px) {
+    width: 90%;
+  }
 }
 
 #c {
