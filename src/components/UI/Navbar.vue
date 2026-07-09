@@ -137,6 +137,9 @@ dt {
   @include Media("<", 1300px) {
     font-size: $font-size-subheading-s !important;
   }
+  @include Media("<", 900px) {
+    font-size: $font-size-title-m !important;
+  }
 }
 
 dd {
@@ -148,6 +151,9 @@ dd {
     font-size: $font-size-body-s !important;
     width: 85% !important;
   }
+  @include Media("<", 1000px) {
+    font-size: $font-size-small-m !important;
+  }
 }
 
 .navitem p {
@@ -156,6 +162,9 @@ dd {
   }
   @include Media("<", 1300px) {
     font-size: $font-size-subheading-s !important;
+  }
+  @include Media("<", 900px) {
+    font-size: $font-size-title-m !important;
   }
 }
 
@@ -262,6 +271,9 @@ nav {
       @include Media("<", 1750px) {
         font-size: $font-size-small-m;
       }
+      @include Media("<", 900px) {
+        font-size: $font-size-small-s;
+      }
 
       opacity: 0.5;
       text-align: right;
@@ -273,6 +285,10 @@ nav {
 
         @include Media("<", 1750px) {
           font-size: calc($font-size-small-m * 0.9);
+        }
+
+        @include Media("<", 900px) {
+          font-size: calc($font-size-small-s * 0.9);
         }
       }
 

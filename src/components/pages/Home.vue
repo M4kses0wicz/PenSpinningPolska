@@ -342,11 +342,20 @@ main {
         @include Media("<", 1370px) {
           font-size: $font-size-heading-s !important;
         }
+        @include Media("<", 900px) {
+          font-size: $font-size-title-m !important;
+        }
       }
 
       p {
         font-size: $font-size-small;
         opacity: 0.75;
+
+        @include Media("<", 900px) {
+          font-size: $font-size-small-m;
+          width: 100px;
+          margin-bottom: 2.5px;
+        }
       }
     }
 
@@ -356,12 +365,21 @@ main {
       cursor: pointer;
       margin-left: 10px;
 
+      @include Media("<", 900px) {
+        scale: 0.5;
+        transform: translate(-40px, -10px);
+      }
+
       .line {
         width: 30px;
         height: 5px;
         background: $white;
         border-radius: 5px;
         transition: 0.4s cubic-bezier(0.45, -0.29, 0.46, 1.27);
+
+        @include Media("<", 900px) {
+          transition: 0.7s cubic-bezier(0.45, -0.29, 0.46, 1.27);
+        }
       }
 
       .arr {

@@ -226,6 +226,10 @@ const setHovered = (event, src) => {
   color: $white;
   transition: color 0.25s ease;
 
+  @include Media("<", 1000px) {
+    font-size: $font-size-subheading-m;
+  }
+
   .accent {
     color: $green;
   }
