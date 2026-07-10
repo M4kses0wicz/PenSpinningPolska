@@ -200,10 +200,17 @@ nav {
   // mix-blend-mode: difference;
   pointer-events: none;
 
+  @include Media("<", 810px) {
+    position: absolute;
+  }
+
   .wrapper {
     display: flex;
     justify-content: space-evenly;
     pointer-events: all;
+
+    @include Media("<", 810px) {
+    }
 
     .navitem {
       margin-top: 25px;
@@ -245,6 +252,10 @@ nav {
     justify-content: space-between;
     pointer-events: none;
     padding: 20px;
+
+    @include Media("<", 810px) {
+      padding: 5%;
+    }
 
     .socials {
       display: flex;

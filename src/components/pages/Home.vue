@@ -20,6 +20,8 @@ function goto(url) {
 const mainRef = ref(null);
 
 const MAX_OFFSET_PX = 14;
+const MAX_OFFSET_PX_MOBILE = 6; // subtelniejszy zakres ruchu na mobile
+const MOBILE_BREAKPOINT = 810;
 
 let rafId = null;
 let targetX = 0;
@@ -27,7 +29,13 @@ let targetY = 0;
 let currentX = 0;
 let currentY = 0;
 
+let isMobile = false;
+let mobileTimer = null;
+let mql = null;
+
 function handleMouseMove(e) {
+  if (isMobile) return; // na mobile ignorujemy kursor
+
   const nx = (e.clientX / window.innerWidth) * 2 - 1;
   const ny = (e.clientY / window.innerHeight) * 2 - 1;
 
@@ -35,9 +43,43 @@ function handleMouseMove(e) {
   targetY = Math.max(-1, Math.min(1, ny)) * MAX_OFFSET_PX;
 }
 
+function pickRandomMobileTarget() {
+  targetX = (Math.random() * 2 - 1) * MAX_OFFSET_PX_MOBILE;
+  targetY = (Math.random() * 2 - 1) * MAX_OFFSET_PX_MOBILE;
+
+  const nextDelay = 2500 + Math.random() * 3000;
+  mobileTimer = setTimeout(pickRandomMobileTarget, nextDelay);
+}
+
+function enableMobileMode() {
+  if (isMobile) return;
+  isMobile = true;
+  pickRandomMobileTarget();
+}
+
+function disableMobileMode() {
+  if (!isMobile) return;
+  isMobile = false;
+  if (mobileTimer) {
+    clearTimeout(mobileTimer);
+    mobileTimer = null;
+  }
+  targetX = 0;
+  targetY = 0;
+}
+
+function handleBreakpointChange(e) {
+  if (e.matches) {
+    enableMobileMode();
+  } else {
+    disableMobileMode();
+  }
+}
+
 function animate() {
-  currentX += (targetX - currentX) * 0.08;
-  currentY += (targetY - currentY) * 0.08;
+  const lerp = isMobile ? 0.015 : 0.08;
+  currentX += (targetX - currentX) * lerp;
+  currentY += (targetY - currentY) * lerp;
 
   if (mainRef.value) {
     mainRef.value.style.setProperty("--mx", `${currentX.toFixed(2)}px`);
@@ -49,11 +91,18 @@ function animate() {
 
 onMounted(() => {
   window.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+  mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+  handleBreakpointChange(mql);
+  mql.addEventListener("change", handleBreakpointChange);
+
   rafId = requestAnimationFrame(animate);
 });
 
 onUnmounted(() => {
   window.removeEventListener("mousemove", handleMouseMove);
+  if (mql) mql.removeEventListener("change", handleBreakpointChange);
+  if (mobileTimer) clearTimeout(mobileTimer);
   if (rafId) cancelAnimationFrame(rafId);
 });
 </script>
@@ -289,6 +338,12 @@ main {
       );
       transition: transform 0.5s ease-out;
       will-change: transform;
+
+      @include Media("<", 810px) {
+        height: auto;
+        width: 85%;
+        margin-top: 0;
+      }
     }
 
     .wrapper-s {
@@ -320,8 +375,14 @@ main {
         calc(var(--mx, 0px) * var(--logo-s-strength)),
         calc(var(--my, 0px) * var(--logo-s-strength))
       );
-      transition: transform 0.6s ease-out;
+      transition: transform 0.6s ease;
       will-change: transform;
+
+      @include Media("<", 810px) {
+        height: auto;
+        width: 200%;
+        margin-top: 0;
+      }
     }
   }
 
@@ -458,6 +519,12 @@ section {
     @include Media("<", 1070px) {
       font-size: $font-size-big-heading !important;
     }
+    @include Media("<", 470px) {
+      font-size: $font-size-big-heading-m !important;
+    }
+    @include Media("<", 405px) {
+      font-size: calc($font-size-big-heading-m * 0.9) !important;
+    }
   }
 
   h4 {
@@ -475,6 +542,18 @@ section {
     }
     @include Media("<", 1300px) {
       font-size: $font-size-body-s !important;
+    }
+  }
+
+  @include Media("<", 350px) {
+    h2 {
+      font-size: calc($font-size-big-heading-m * 0.8) !important;
+    }
+    h4 {
+      font-size: calc($font-size-subheading-s * 0.9) !important;
+    }
+    p {
+      font-size: calc($font-size-body-s * 0.9) !important;
     }
   }
 
@@ -812,6 +891,10 @@ section {
         text-align: left;
         width: 70%;
         transform: translateY(15px);
+      }
+
+      @include Media("<", 370px) {
+        transform: translateY(0px);
       }
     }
 
