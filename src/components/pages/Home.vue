@@ -109,6 +109,56 @@ onUnmounted(() => {
 
 <template>
   <Navbar />
+  <div class="bottom-content-wrapper-mobile">
+    <div class="socials">
+      <a
+        href="https://www.facebook.com/groups/penspinningpl"
+        target="_blank"
+        title="Nasza grupa na Facebooku"
+      >
+        <i
+          class="fa-brands fa-facebook"
+          @mouseover="grow"
+          @mouseleave="reset"
+        ></i>
+      </a>
+      <a
+        href="https://discord.gg/MCXEnkh"
+        target="_blank"
+        title="Dołącz do naszego Discorda"
+      >
+        <i
+          class="fa-brands fa-discord"
+          @mouseover="grow"
+          @mouseleave="reset"
+        ></i>
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UCX5b5jV6V5Q5Q5Q5Q5Q5Q5Q"
+        target="_blank"
+        title="Zobacz nasz kanał na YouTube"
+      >
+        <i
+          class="fa-brands fa-youtube"
+          @mouseover="grow"
+          @mouseleave="reset"
+        ></i>
+      </a>
+    </div>
+    <div class="copy">
+      <p>
+        Strona stworzona przez: <br />
+        <a
+          href="https://klemensowicz.pl"
+          target="_blank"
+          title="Developer"
+          @mouseover="growS"
+          @mouseleave="reset"
+          >Klemensowicz - M4k</a
+        >
+      </p>
+    </div>
+  </div>
   <BackgroundLines />
   <main ref="mainRef">
     <div class="block"></div>
@@ -293,6 +343,60 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 @use "../../styles/base.scss" as *;
+
+.bottom-content-wrapper-mobile {
+  display: none;
+
+  @include Media("<", 810px) {
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 2% 5%;
+
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      font-size: $font-size-title-s;
+      pointer-events: all;
+
+      i {
+        transition: 0.25s ease;
+        // filter: drop-shadow(0 0 0px $black);
+      }
+
+      i:hover {
+        // color: $green;
+        // filter: drop-shadow(0 0 5px $black);
+        scale: 1.1;
+      }
+    }
+
+    .copy {
+      font-size: $font-size-small-s;
+
+      opacity: 0.5;
+      text-align: right;
+      align-self: flex-end;
+      pointer-events: all;
+
+      font-family: "Inter", sans-serif;
+      color: $white;
+
+      a {
+        font-size: calc($font-size-small-s * 0.9);
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 main {
   width: 100vw;
@@ -580,6 +684,10 @@ section {
   }
 
   &.info {
+    @include Media("<", 810px) {
+      margin: 100px 0px 0px 5%;
+    }
+
     .heading {
       h2 {
         font-size: $font-size-big;

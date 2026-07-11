@@ -120,6 +120,45 @@ onUnmounted(() => {
       </div>
     </div>
   </nav>
+  <nav class="mobile">
+    <div class="wrapper">
+      <div class="navitem ppp">
+        <p @click="router.push('/')" @mouseover="grow" @mouseleave="reset">
+          <strong class="s">P</strong>ortal <strong class="s">P</strong>olskich
+          <strong class="s">P</strong>enspinnerów
+        </p>
+      </div>
+      <div class="container">
+        <div class="navitem">
+          <p
+            @click="router.push('/Historia')"
+            @mouseover="grow"
+            @mouseleave="reset"
+          >
+            <strong class="l">H</strong>istoria
+          </p>
+        </div>
+        <div class="navitem">
+          <p
+            @click="router.push('/Wydarzenia')"
+            @mouseover="grow"
+            @mouseleave="reset"
+          >
+            <strong class="l">W</strong>ydarzenia
+          </p>
+        </div>
+        <div class="navitem">
+          <p
+            @click="router.push('/Artykuly')"
+            @mouseover="grow"
+            @mouseleave="reset"
+          >
+            <strong class="l">A</strong>rtykuły
+          </p>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped lang="scss">
@@ -187,7 +226,7 @@ dd {
   }
 }
 
-nav {
+nav:not(.mobile) {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -197,20 +236,17 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   height: 100svh;
-  // mix-blend-mode: difference;
+  mix-blend-mode: difference;
   pointer-events: none;
 
   @include Media("<", 810px) {
-    position: absolute;
+    display: none;
   }
 
   .wrapper {
     display: flex;
     justify-content: space-evenly;
     pointer-events: all;
-
-    @include Media("<", 810px) {
-    }
 
     .navitem {
       margin-top: 25px;
@@ -255,6 +291,7 @@ nav {
 
     @include Media("<", 810px) {
       padding: 5%;
+      display: none;
     }
 
     .socials {
@@ -313,6 +350,48 @@ nav {
 nav.scrolled-down {
   .wrapper .navitem dd {
     opacity: 0;
+  }
+}
+
+.mobile {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 2% 5%;
+
+  display: flex;
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: all;
+  }
+
+  .navitem {
+    margin-bottom: 2.5px;
+
+    &.ppp {
+      width: 33%;
+
+      p {
+        text-align: left !important;
+      }
+    }
+
+    p {
+      text-align: right;
+
+      @include Media("<", 350px) {
+        font-size: $font-size-small !important;
+
+        strong {
+          font-size: $font-size-body !important;
+        }
+      }
+    }
   }
 }
 </style>

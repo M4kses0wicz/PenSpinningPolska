@@ -37,7 +37,7 @@ const props = defineProps({
 
   @include Media("<", 810px) {
     width: 90%;
-    margin: 10% 0px 50px 5%;
+    margin: 100px 0px 50px 5%;
   }
 
   h1 {
