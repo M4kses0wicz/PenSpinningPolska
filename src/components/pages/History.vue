@@ -1,6 +1,7 @@
 <script setup>
 import BackgroundLines from "../UI/BackgroundLines.vue";
 import Navbar from "../UI/Navbar.vue";
+import Footer from "../UI/Footer.vue";
 
 import { useRouter } from "vue-router";
 </script>
@@ -8,7 +9,10 @@ import { useRouter } from "vue-router";
 <template>
   <Navbar />
   <BackgroundLines />
-  <h1><strong>Już</strong> wkrótce...</h1>
+  <div class="wrapper">
+    <h1><strong>Już</strong> wkrótce...</h1>
+  </div>
+  <Footer />
 </template>
 
 <style scoped lang="scss">
@@ -19,8 +23,13 @@ import { useRouter } from "vue-router";
   font-family: "Inter", sans-serif;
 }
 
+.wrapper {
+  @include FlexCenter;
+  width: 100%;
+  height: calc(100vh - 17.5px);
+}
+
 h1 {
-  margin: 20%;
   font-size: $font-size-heading;
 }
 </style>

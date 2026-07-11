@@ -96,6 +96,10 @@ section {
     @include Media("<", 810px) {
       font-size: $font-size-big-xs !important;
     }
+
+    @include Media("<", 450px) {
+      font-size: $font-size-big-heading-m !important;
+    }
   }
 }
 </style>

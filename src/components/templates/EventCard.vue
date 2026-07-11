@@ -71,6 +71,10 @@ const props = defineProps({
       @include Media("<", 1300px) {
         font-size: $font-size-body-s;
       }
+
+      @include Media("<", 450px) {
+        font-size: $font-size-small-m;
+      }
     }
   }
 
@@ -87,6 +91,10 @@ const props = defineProps({
       margin: 20px 0px;
     }
 
+    @include Media("<", 450px) {
+      margin: 12.5px 0px;
+    }
+
     h2 {
       font-size: $font-size-heading;
       margin-bottom: 5px;
@@ -97,6 +105,10 @@ const props = defineProps({
 
       @include Media("<", 1300px) {
         font-size: $font-size-heading-s;
+      }
+
+      @include Media("<", 450px) {
+        font-size: $font-size-subheading-m;
       }
     }
 

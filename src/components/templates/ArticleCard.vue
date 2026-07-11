@@ -73,6 +73,10 @@ const props = defineProps({
       @include Media("<", 1300px) {
         font-size: $font-size-body-s;
       }
+
+      @include Media("<", 450px) {
+        font-size: $font-size-small-m;
+      }
     }
   }
 
@@ -100,6 +104,10 @@ const props = defineProps({
       @include Media("<", 1300px) {
         font-size: $font-size-heading-s;
       }
+
+      @include Media("<", 450px) {
+        font-size: $font-size-subheading-m;
+      }
     }
 
     p {
@@ -113,6 +121,10 @@ const props = defineProps({
 
       @include Media("<", 1300px) {
         font-size: $font-size-body-s;
+      }
+
+      @include Media("<", 450px) {
+        font-size: $font-size-small-m;
       }
     }
   }
