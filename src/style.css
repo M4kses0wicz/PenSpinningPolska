@@ -10,7 +10,14 @@ body {
   background: #070707;
   overflow: hidden;
 }
+
 #app {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 810px) {
+  body {
+    overflow: auto;
+  }
 }
