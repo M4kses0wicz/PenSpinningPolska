@@ -94,7 +94,7 @@ onUnmounted(() => {
           ></i>
         </a>
         <a
-          href="https://www.youtube.com/channel/UCX5b5jV6V5Q5Q5Q5Q5Q5Q5Q"
+          href="https://youtube.com/@penspinningpolska?si=qp99_hhrGso8WYld"
           target="_blank"
           title="Zobacz nasz kanał na YouTube"
         >
@@ -354,41 +354,46 @@ nav.scrolled-down {
 }
 
 .mobile {
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  padding: 2% 5%;
+  display: none;
 
-  display: flex;
-
-  .wrapper {
+  @include Media("<", 810px) {
     width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 2% 5%;
+
     display: flex;
-    justify-content: space-between;
-    pointer-events: all;
-  }
+    mix-blend-mode: difference;
 
-  .navitem {
-    margin-bottom: 2.5px;
-
-    &.ppp {
-      width: 33%;
-
-      p {
-        text-align: left !important;
-      }
+    .wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: all;
     }
 
-    p {
-      text-align: right;
+    .navitem {
+      margin-bottom: 2.5px;
 
-      @include Media("<", 350px) {
-        font-size: $font-size-small !important;
+      &.ppp {
+        width: 33%;
 
-        strong {
-          font-size: $font-size-body !important;
+        p {
+          text-align: left !important;
+        }
+      }
+
+      p {
+        text-align: right;
+
+        @include Media("<", 350px) {
+          font-size: $font-size-small !important;
+
+          strong {
+            font-size: $font-size-body !important;
+          }
         }
       }
     }

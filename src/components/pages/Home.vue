@@ -134,7 +134,7 @@ onUnmounted(() => {
         ></i>
       </a>
       <a
-        href="https://www.youtube.com/channel/UCX5b5jV6V5Q5Q5Q5Q5Q5Q5Q"
+        href="https://youtube.com/@penspinningpolska?si=qp99_hhrGso8WYld"
         target="_blank"
         title="Zobacz nasz kanał na YouTube"
       >
@@ -684,6 +684,10 @@ section {
   }
 
   &.info {
+    @include Media("<", 1750px) {
+      margin: 150px 0px 100px 20%;
+    }
+
     @include Media("<", 810px) {
       margin: 100px 0px 0px 5%;
     }
