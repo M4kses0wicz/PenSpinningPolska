@@ -34,6 +34,7 @@ import { useRouter } from "vue-router";
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="router.push('/Wydarzenia/20LatPPP')"
+      data-aos="fade-right"
     />
     <EventCard
       title="XII Mistrzostwa Polski w Pen Spinningu 2024"
@@ -43,6 +44,7 @@ import { useRouter } from "vue-router";
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="router.push('/Wydarzenia/MP24')"
+      data-aos="fade-left"
     />
     <EventCard
       title="18 urodziny Portalu Polskich Penspinnerów! - Meeting we Wrocławiu"
@@ -51,6 +53,7 @@ import { useRouter } from "vue-router";
       context="Historia"
       @mouseenter="grow()"
       @mouseleave="reset()"
+      data-aos="fade-right"
     />
   </section>
   <div class="margin-block"></div>

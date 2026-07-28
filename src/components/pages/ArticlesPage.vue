@@ -40,6 +40,7 @@ function Soon() {
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="router.push('/Artykuly/Modyfikacje')"
+      data-aos="fade-right"
     />
     <ArticleCard
       title="Styl w Pen spinningu - O stylu w Pen spinningu słów kilka."
@@ -50,6 +51,7 @@ function Soon() {
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="router.push('/Artykuly/StylWPenspinningu')"
+      data-aos="fade-left"
     />
     <ArticleCard
       title="Standardy zapisów tricków - Podstawy Notacji Angielskiej."
@@ -60,6 +62,7 @@ function Soon() {
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="router.push('/Artykuly/PodstawyNotacji')"
+      data-aos="fade-right"
     />
     <ArticleCard
       title="Podstawy Pen Moddingu - Twoje małe dzieło sztuki."
@@ -70,6 +73,7 @@ function Soon() {
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="Soon()"
+      data-aos="fade-left"
     />
     <ArticleCard
       title="Zaawansowane zagadnienia notacji angielskiej."
@@ -80,6 +84,7 @@ function Soon() {
       @mouseenter="grow()"
       @mouseleave="reset()"
       @click="Soon()"
+      data-aos="fade-right"
     />
   </section>
   <div class="margin-block"></div>
