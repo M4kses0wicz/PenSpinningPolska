@@ -19,6 +19,11 @@ function goto(url) {
 
 const mainRef = ref(null);
 
+// referencje do elementów .vid, potrzebne dla IntersectionObserver na mobile
+const vid0 = ref(null);
+const vid1 = ref(null);
+const vid2 = ref(null);
+
 const MAX_OFFSET_PX = 14;
 const MAX_OFFSET_PX_MOBILE = 6; // subtelniejszy zakres ruchu na mobile
 const MOBILE_BREAKPOINT = 810;
@@ -32,6 +37,7 @@ let currentY = 0;
 let isMobile = false;
 let mobileTimer = null;
 let mql = null;
+let observer = null;
 
 function handleMouseMove(e) {
   if (isMobile) return; // na mobile ignorujemy kursor
@@ -51,10 +57,45 @@ function pickRandomMobileTarget() {
   mobileTimer = setTimeout(pickRandomMobileTarget, nextDelay);
 }
 
+// --- IntersectionObserver: na mobile zdjęcie -> wideo, gdy element w pełni widoczny ---
+function handleIntersection(entries) {
+  entries.forEach((entry) => {
+    const isFullyVisible = entry.intersectionRatio >= 0.99;
+
+    if (entry.target === vid0.value) hovered.value = isFullyVisible;
+    if (entry.target === vid1.value) hovered1.value = isFullyVisible;
+    if (entry.target === vid2.value) hovered2.value = isFullyVisible;
+  });
+}
+
+function setupObserver() {
+  if (observer) return;
+
+  observer = new IntersectionObserver(handleIntersection, {
+    threshold: [0, 0.25, 0.5, 0.75, 0.99, 1],
+  });
+
+  [vid0.value, vid1.value, vid2.value].forEach((el) => {
+    if (el) observer.observe(el);
+  });
+}
+
+function teardownObserver() {
+  if (observer) {
+    observer.disconnect();
+    observer = null;
+  }
+  // reset stanów, żeby wrócić do zdjęć po przejściu na desktop
+  hovered.value = false;
+  hovered1.value = false;
+  hovered2.value = false;
+}
+
 function enableMobileMode() {
   if (isMobile) return;
   isMobile = true;
   pickRandomMobileTarget();
+  setupObserver();
 }
 
 function disableMobileMode() {
@@ -66,6 +107,7 @@ function disableMobileMode() {
   }
   targetX = 0;
   targetY = 0;
+  teardownObserver();
 }
 
 function handleBreakpointChange(e) {
@@ -104,6 +146,7 @@ onUnmounted(() => {
   if (mql) mql.removeEventListener("change", handleBreakpointChange);
   if (mobileTimer) clearTimeout(mobileTimer);
   if (rafId) cancelAnimationFrame(rafId);
+  teardownObserver();
 });
 </script>
 
@@ -208,6 +251,7 @@ onUnmounted(() => {
       <div class="video-content">
         <div
           class="vid"
+          ref="vid0"
           @mouseenter="hovered = true"
           @mouseleave="hovered = false"
           @click="goto('https://youtu.be/o8KDwr80joE?si=XlRpOeRIz6KC2S0u')"
@@ -241,6 +285,7 @@ onUnmounted(() => {
     <div class="video-content">
       <div
         class="vid"
+        ref="vid1"
         @mouseenter="hovered1 = true"
         @mouseleave="hovered1 = false"
         @click="goto('https://youtu.be/gwMx_X5vjYc?si=gH8JKQxf8auk1zSK')"
@@ -296,6 +341,7 @@ onUnmounted(() => {
       <div class="video-content">
         <div
           class="vid"
+          ref="vid2"
           @mouseenter="hovered2 = true"
           @mouseleave="hovered2 = false"
           @click="goto('https://youtu.be/Mf7GMTU4M0M?si=Gu4_Nq8kmg2YH07n')"
