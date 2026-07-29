@@ -33,11 +33,11 @@ onUnmounted(() => {
           <strong class="s">P</strong>enspinnerów
         </p>
       </div>
-      <div class="navitem">
+      <dl class="navitem">
         <dt></dt>
         <dd></dd>
-      </div>
-      <div class="navitem">
+      </dl>
+      <dl class="navitem">
         <dt
           @click="router.push('/Historia')"
           @mouseover="grow"
@@ -46,8 +46,8 @@ onUnmounted(() => {
           <strong class="l">H</strong>istoria
         </dt>
         <dd>Poznaj historię penspinningu sięgającą roku 2005</dd>
-      </div>
-      <div class="navitem">
+      </dl>
+      <dl class="navitem">
         <dt
           @click="router.push('/Wydarzenia')"
           @mouseover="grow"
@@ -56,8 +56,8 @@ onUnmounted(() => {
           <strong class="l">W</strong>ydarzenia
         </dt>
         <dd>Bądź na bierząco z nadchodzącymi wydarzeniami</dd>
-      </div>
-      <div class="navitem">
+      </dl>
+      <dl class="navitem">
         <dt
           @click="router.push('/Artykuly')"
           @mouseover="grow"
@@ -66,7 +66,7 @@ onUnmounted(() => {
           <strong class="l">A</strong>rtykuły
         </dt>
         <dd>Dowiedz się więcej na temat pen spinningu</dd>
-      </div>
+      </dl>
     </div>
 
     <div class="bottom-content-wrapper">

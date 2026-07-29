@@ -273,7 +273,7 @@ onUnmounted(() => {
             muted
             playsinline
           ></video>
-          <img v-else src="../../assets/bula.png" />
+          <img v-else src="../../assets/bula.png" alt="buła - filmik" />
         </div>
         <div class="vid-text" v-if="hovered === true">Obejrzyj całość</div>
         <div class="vid-text" v-if="hovered === false" style="opacity: 0">
@@ -307,7 +307,7 @@ onUnmounted(() => {
           muted
           playsinline
         ></video>
-        <img v-else src="../../assets/meeting1.png" />
+        <img v-else src="../../assets/meeting1.png" alt="meeting1 - filmik" />
       </div>
       <div class="vid-text" v-if="hovered1 === true">Obejrzyj całość</div>
       <div class="vid-text" v-if="hovered1 === false" style="opacity: 0">
@@ -363,7 +363,7 @@ onUnmounted(() => {
             muted
             playsinline
           ></video>
-          <img v-else src="../../assets/meeting2.png" />
+          <img v-else src="../../assets/meeting2.png" alt="meeting2 - filmik" />
         </div>
         <div class="vid-text" v-if="hovered2 === true">Obejrzyj całość</div>
         <div class="vid-text" v-if="hovered2 === false" style="opacity: 0">
