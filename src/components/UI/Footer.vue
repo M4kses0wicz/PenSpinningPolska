@@ -79,9 +79,13 @@ footer {
 
       .socials {
         display: flex;
-        gap: 25px;
-        font-size: $font-size-title-s;
+        gap: 20px;
+        font-size: $font-size-title-m;
         pointer-events: all;
+
+        @include Media("<", 375px) {
+          gap: 10px;
+        }
 
         i {
           transition: 0.25s ease;
