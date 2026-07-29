@@ -19,13 +19,12 @@ function goto(url) {
 
 const mainRef = ref(null);
 
-// referencje do elementów .vid, potrzebne dla IntersectionObserver na mobile
 const vid0 = ref(null);
 const vid1 = ref(null);
 const vid2 = ref(null);
 
 const MAX_OFFSET_PX = 14;
-const MAX_OFFSET_PX_MOBILE = 6; // subtelniejszy zakres ruchu na mobile
+const MAX_OFFSET_PX_MOBILE = 6;
 const MOBILE_BREAKPOINT = 810;
 
 let rafId = null;
@@ -40,7 +39,7 @@ let mql = null;
 let observer = null;
 
 function handleMouseMove(e) {
-  if (isMobile) return; // na mobile ignorujemy kursor
+  if (isMobile) return;
 
   const nx = (e.clientX / window.innerWidth) * 2 - 1;
   const ny = (e.clientY / window.innerHeight) * 2 - 1;
@@ -57,7 +56,6 @@ function pickRandomMobileTarget() {
   mobileTimer = setTimeout(pickRandomMobileTarget, nextDelay);
 }
 
-// --- IntersectionObserver: na mobile zdjęcie -> wideo, gdy element w pełni widoczny ---
 function handleIntersection(entries) {
   entries.forEach((entry) => {
     const isFullyVisible = entry.intersectionRatio >= 0.99;
@@ -85,7 +83,7 @@ function teardownObserver() {
     observer.disconnect();
     observer = null;
   }
-  // reset stanów, żeby wrócić do zdjęć po przejściu na desktop
+
   hovered.value = false;
   hovered1.value = false;
   hovered2.value = false;
@@ -151,6 +149,15 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <div class="hn-wrapper">
+    <h1>Pen Spinning Polska</h1>
+    <h2>Portal Polskich Pen Spinnerów</h2>
+    <h3>Pen Spinning Polska</h3>
+    <h4>Portal Polskich Pen Spinnerów</h4>
+    <h5>Pen Spinning Polska</h5>
+    <h6>Portal Polskich Pen Spinnerów</h6>
+  </div>
+
   <Navbar />
   <div class="bottom-content-wrapper-mobile">
     <div class="socials">
@@ -389,6 +396,12 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 @use "../../styles/base.scss" as *;
+
+.hn-wrapper {
+  position: absolute;
+  pointer-events: none;
+  color: #00000000;
+}
 
 .bottom-content-wrapper-mobile {
   display: none;
