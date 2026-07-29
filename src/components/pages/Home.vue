@@ -661,7 +661,15 @@ section {
 
   @include Media("<", 810px) {
     width: 90%;
-    margin: 100px 0px 50px 5%;
+    margin: 100px 0px 200px 5%;
+
+    &:nth-of-type(2) {
+      margin-top: 225px;
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 100px;
+    }
   }
 
   color: $white;
