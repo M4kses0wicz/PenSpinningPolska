@@ -150,8 +150,8 @@ onUnmounted(() => {
 
 <template>
   <div class="hn-wrapper">
-    <h1>Pen Spinning Polska</h1>
-    <h2>Portal Polskich Pen Spinnerów</h2>
+    <h1>Penspinning Polska</h1>
+    <h2>Penspinning Polska :: Odrodzony PPP</h2>
     <h3>Pen Spinning Polska</h3>
     <h4>Portal Polskich Pen Spinnerów</h4>
     <h5>Pen Spinning Polska</h5>
