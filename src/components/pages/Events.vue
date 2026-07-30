@@ -16,7 +16,7 @@ import { useRouter } from "vue-router";
   <Navbar />
   <BackgroundLines />
   <section class="content">
-    <h1><strong>W</strong>ydarzenia</h1>
+    <h2>Bądź na <strong>bierząco</strong>.</h2>
     <EventCard
       title="XIII Mistrzostwa Polski w Pen Spinningu 2026"
       date="czerwiec-sierpień 2026"
@@ -84,7 +84,7 @@ section {
     margin-left: 5%;
   }
 
-  h1 {
+  h2 {
     font-size: $font-size-big;
     width: 100%;
 

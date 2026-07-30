@@ -20,7 +20,7 @@ function Soon() {
   <Navbar />
   <BackgroundLines />
   <section class="content">
-    <h1><strong>A</strong>rtykuły</h1>
+    <h2>Dowiedz się <strong>więcej</strong>.</h2>
     <ArticleCard
       title="Rozpocznij swoją przygodę z pen spinningiem!"
       description="Jak zacząć kręcić i jak się w tym odnaleźć? W tym artykule znajdziesz wszystkie niezbędne informacje, które pomogą Ci rozpocząć swoją przygodę z pen spinningiem."
@@ -115,7 +115,7 @@ section {
     margin-left: 5%;
   }
 
-  h1 {
+  h2 {
     font-size: $font-size-big;
     width: 100%;
 
