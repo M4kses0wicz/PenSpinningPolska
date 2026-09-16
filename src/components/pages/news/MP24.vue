@@ -39,13 +39,13 @@ import ArticleHeading from "../../templates/articleParts/ArticleHeading.vue";
     <br />
     Format rywalizacji obejmował cztery rundy. W rundach 1 i 2 wszyscy zawodnicy
     startowali w jednej grupie, nagrywając i przesyłając swoje combo. Pierwsza
-    runda startowała 22 lipca, a wyniki ogłoszono 5 sierpnia – tego samego dnia
-    rozpoczęła się runda druga, zakończona wynikami 19 sierpnia. Na podstawie
-    wyników obu rund do dalszej fazy awansowała czwórka najlepszych zawodników,
-    którzy w rundzie 3 (start 19 sierpnia, wyniki 7 września) zmierzyli się
-    systemem pucharowym: T1 vs T4 oraz T2 vs T3. Zwycięzcy tych pojedynków
-    przeszli do wielkiego finału, a przegrani powalczyli o trzecie miejsce –
-    obie te walki rozegrano w rundzie 4, startującej 7 września, z wynikami
+    runda wytartowała 22 lipca, a wyniki ogłoszono 5 sierpnia, a tego samego
+    dnia rozpoczęła się runda druga, zakończona wynikami 19 sierpnia. Na
+    podstawie wyników obu rund do dalszej fazy awansowała czwórka najlepszych
+    zawodników, którzy w rundzie 3 (start 19 sierpnia, wyniki 7 września)
+    zmierzyli się systemem pucharowym: T1 vs T4 oraz T2 vs T3. Zwycięzcy tych
+    pojedynków przeszli do finału, a przegrani powalczyli o trzecie miejsce.
+    Obie te walki rozegrano w rundzie 4, startującej 7 września, z wynikami
     ogłoszonymi 26 września.
     <br />
     <br />
@@ -54,9 +54,9 @@ import ArticleHeading from "../../templates/articleParts/ArticleHeading.vue";
     nie mogły być zmontowane (poza dozwolonym przycinaniem, edycją dźwięku czy
     dodaniem zwolnionego tempa). Sędziowie oceniali występy w pięciu
     kategoriach: Difficulty, Execution, Presentation, Originality oraz
-    Recycling, przyznając punkty według ustalonej skali – od 0 do 10 w
-    większości kategorii, maksymalnie 2 punkty za prezentację oraz od 0 do 5
-    punktów karnych za recykling trików z poprzednich rund. Złamanie regulaminu
+    Recycling, przyznając punkty według ustalonej skali od 0 do 10 w większości
+    kategorii, maksymalnie 2 punkty za prezentację oraz od 0 do 5 punktów
+    karnych za recykling trików z poprzednich rund. Złamanie regulaminu
     skutkowało dyskwalifikacją z mistrzostw.
   </WideTextBlock>
   <TextBlock align="right">

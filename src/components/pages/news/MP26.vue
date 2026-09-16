@@ -54,8 +54,24 @@ import ArticleHeading from "../../templates/articleParts/ArticleHeading.vue";
           >Runda 1</a
         >
       </li>
-      <li>Runda 2 - w trakcie</li>
-      <li>Runda 3 - w trakcie</li>
+      <li>
+        <a
+          @mouseover="grow"
+          @mouseleave="reset"
+          target="_blank"
+          href="https://docs.google.com/spreadsheets/d/1QPTfkbiWlh42yI3AxVSlrmrwG_JlAFzQJtLPWXb8GUE/edit?usp=sharing"
+          >Runda 2</a
+        >
+      </li>
+      <li>
+        <a
+          @mouseover="grow"
+          @mouseleave="reset"
+          target="_blank"
+          href="https://docs.google.com/spreadsheets/d/151ye3BP7v4Szbxys31l4nwgl-p62o7sdsEzdCFeDq0w/edit?usp=drivesdk"
+          >Runda 3</a
+        >
+      </li>
     </ul>
   </TextBlock>
   <!-- <VideoBlock :src="src" text="Mistrzostwa Polski 2026" /> -->
